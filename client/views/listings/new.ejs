@@ -1,0 +1,31 @@
+<%- include("../layouts/boilerplate", { body: `
+   <h1 class="mb-4 text-center">Add New Listing</h1>
+
+<form action="/listings" method="POST" class="container" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="title" class="form-label">Job Title</label>
+    <input type="text" name="title" id="title" class="form-control" placeholder="Enter job title" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Salary (Rs)</label>
+    <input type="number" name="price" id="price" class="form-control" placeholder="Enter salary amount" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Job Description</label>
+    <textarea name="description" id="description" class="form-control" rows="4" placeholder="Describe the job..."></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Company Logo / Banner</label>
+    <input type="file" name="image" id="image" class="form-control">
+  </div>
+
+  <div class="d-grid">
+    <button type="submit" class="btn btn-primary">Upload Job</button>
+  </div>
+</form>
+
+
+` }) %>

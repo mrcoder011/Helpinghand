@@ -1,0 +1,124 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    height: 5rem;
+    background-color: #8fbbe7;
+}
+.hero {
+  position: relative;
+  min-height: 85vh;
+  background: url('/images/hero.png') center center / cover no-repeat;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* faint dark overlay */
+  backdrop-filter: brightness(80%);
+  z-index: -1;
+}
+.fa-handshake-angle{
+    color: #2351e9;
+    font-size:  2rem;
+}
+.nav-link {
+    color: #020202 !important;
+    font-size: 1.2rem;
+}
+.footer a {
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.footer h5, .footer h6 {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer i {
+  color: #444;
+  transition: 0.3s ease;
+}
+
+.footer i:hover {
+  color: #0d6efd;
+}
+
+.footer img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 1rem;
+  }
+}
+
+.space-y-4 > * + * { margin-top: 1rem; }
+.flex { display: flex; }
+.space-x-4 > * + * { margin-left: 1rem; }
+.w-full { width: 100%; }
+.p-2 { padding: 0.5rem; }
+.border { border: 1px solid #e2e8f0; }
+.rounded { border-radius: 0.25rem; }
+.mt-6 { margin-top: 1.5rem; }
+.bg-blue-500 { background-color: #3b82f6; }
+.bg-gray-500 { background-color: #6b7280; }
+.text-white { color: white; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.hover\:bg-blue-600:hover { background-color: #2563eb; }
+.hover\:bg-gray-600:hover { background-color: #4b5563; }
+.transition { transition: all 0.2s ease; }
+.flex-1 { flex: 1 1 0%; }
+
+/* Smooth hover and scale for cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+}
+
+/* Hover effect for 3D look */
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Card image rounded */
+.card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* Button smooth interaction */
+.card-footer a.btn {
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.card-footer a.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Optional 3D tilt effect */
+.card.tilt:hover {
+  transform: perspective(1000px) rotateY(3deg) rotateX(3deg);
+}
