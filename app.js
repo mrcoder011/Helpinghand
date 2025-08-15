@@ -1,33 +1,37 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const path = require("path");
-const nodemailer = require("nodemailer"); // ✅ Added nodemailer
+const nodemailer = require("nodemailer");
 const multer = require("multer");
 const fs = require("fs");
 const upload = multer({ dest: "uploads/" }); // Folder to save resume
 
-
-
-
 const app = express();
 
-mongoose.connect("mongodb://127.0.0.1:27017/majorProject", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log("Connected to DB");
-}).catch((err) => {
-    console.log("Error:", err);
-});
+// ❌ Removed MongoDB connection
+// const mongoose = require("mongoose");
+// mongoose.connect("mongodb://127.0.0.1:27017/majorProject", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }).then(() => {
+//     console.log("Connected to DB");
+// }).catch((err) => {
+//     console.log("Error:", err);
+// });
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
-const listingRoutes = require("./routes/listings");
-app.use("/listings", listingRoutes);
+
+// ✅ If your listingRoutes depend on MongoDB, skip them
+try {
+    const listingRoutes = require("./routes/listings");
+    app.use("/listings", listingRoutes);
+} catch (err) {
+    console.warn("⚠️ Skipping /listings routes — MongoDB not connected.");
+}
 
 // Main Routes
 app.get("/", (req, res) => {
@@ -45,7 +49,9 @@ app.get("/about", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact");
 });
+
 if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
+
 // ✅ Contact form logic here
 app.post("/contact", upload.single("resume"), async (req, res) => {
     const {
@@ -140,18 +146,17 @@ Year of Completion: ${completionYear}
 });
 
 app.get("/jobs", (req, res) => {
-    res.render("jobs"); // ✅ Correct path
+    res.render("jobs");
 });
 
 app.get(`/intern`, (req, res) => {
-    res.render("intern"); // ✅ Correct path
+    res.render("intern");
 });
+
 app.get("/soon", (req, res) => {
-    res.render("soon"); // ✅ Correct path
+    res.render("soon");
 });
-
-
 
 app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
+    console.log("🚀 Server running on http://localhost:3000");
 });
