@@ -1,31 +1,171 @@
-<%- include("./layouts/boilerplate", { body: `
-  <section class="about-section py-5 bg-light">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold text-primary">About Helping Hand</h2>
-        <p class="text-muted">Your career growth partner</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Amupro1</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (for navbar & footer icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    /* Navbar */
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 22px;
+      color: #0d6efd !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      margin-right: 15px;
+    }
+
+    .notification-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: red;
+      color: white;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 50%;
+    }
+
+    /* Footer links */
+    footer a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #0d6efd;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+
+    <!-- FIXED LOGO (SAME AS FOOTER) -->
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <i class="fa-solid fa-handshake-angle me-2 text-primary"></i>
+      Amupro
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact us!</a>
+        </li>
+
+        <!-- Notification -->
+        <li class="nav-item position-relative ms-3">
+          <i class="fa-solid fa-bell fs-5"></i>
+          <span class="notification-badge">100+</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- =============== NAVBAR END =============== -->
+
+
+<!-- ======== PAGE CONTENT HERE ======== -->
+<div class="container my-5 text-center text-muted">
+  <p>Add your page content here</p>
+</div>
+<!-- ================================== -->
+
+
+<!-- ================= AMUPRO FOOTER ================= -->
+<footer class="footer bg-light pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row text-start">
+
+      <!-- Logo & Company Links -->
+      <div class="col-md-3 mb-4">
+        <h5>
+          <i class="fa-solid fa-handshake-angle me-2 text-primary"></i>
+          Amupro
+        </h5>
+        <ul class="list-unstyled">
+          <li><a href="/about">About us</a></li>
+          <li><a href="#">Investor Relations</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="#">Anti-discrimination Policy</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
       </div>
 
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4">
-          <img src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=1200" class="img-fluid rounded shadow" alt="Helping Hand">
+      <!-- For Customers -->
+      <div class="col-md-3 mb-4">
+        <h6>For Customers</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Categories Near You</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- For Professionals -->
+      <div class="col-md-3 mb-4">
+        <h6>For Professionals</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Register as a Professional</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media & App Links -->
+      <div class="col-md-3 mb-4">
+        <h6>Social Links</h6>
+        <div class="d-flex gap-3 mb-3">
+          <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
         </div>
-        <div class="col-md-6">
-          <p class="fs-5 text-muted">
-            <strong>Helping Hand</strong> is your trusted partner for building a strong future. We connect students and young professionals with real-world career opportunities by offering:
-          </p>
-          <ul class="fs-5 text-muted ps-3">
-            <li><strong>✔️ Job Openings</strong> – Access verified full-time roles in top Indian companies.</li>
-            <li><strong>✔️ Internships/Training</strong> – Gain hands-on experience with real industry projects.</li>
-            <li><strong>✔️ Mentorship</strong> – Get guidance from settled professionals in your domain.</li>
-          </ul>
-          <p class="fs-5 text-muted">
-            Whether you’re a student or a recent graduate, Helping Hand is designed to uplift your career at the right time.
-          </p>
-        </div>
+        <a href="/soon">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            width="135"
+            alt="Google Play"
+          >
+        </a>
       </div>
     </div>
-  </section>
-` }) %>
 
+    <!-- Bottom note -->
+    <div class="text-muted small mt-4 border-top pt-3 text-center">
+      * As on June 30, 2025 <br />
+      © 2025 Amupro Pvt. Ltd. | CIN: U12345DL2025PTC123456
+    </div>
+  </div>
+</footer>
+<!-- =============== FOOTER END =============== -->
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
