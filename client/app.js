@@ -5,10 +5,24 @@ const path = require("path");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const fs = require("fs");
-
-const upload = multer({ dest: "uploads/" });
+const session = require("express-session");
 
 const app = express();
+
+/* =========================
+   SESSION CONFIG
+========================= */
+app.use(session({
+  secret: "student_secret_key",
+  resave: false,
+  saveUninitialized: false
+}));
+
+/* Pass current user to all EJS (Navbar ke liye) */
+app.use((req, res, next) => {
+  res.locals.currentUser = req.session.student || null;
+  next();
+});
 
 /* =========================
    DATABASE CONNECTION
@@ -31,6 +45,16 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
 /* =========================
+   LOGIN PROTECTION
+========================= */
+function isLoggedIn(req, res, next) {
+  if (!req.session.student) {
+    return res.redirect("/login");
+  }
+  next();
+}
+
+/* =========================
    ROUTES
 ========================= */
 
@@ -49,10 +73,6 @@ app.get("/", (req, res) => {
   res.redirect("/listings");
 });
 
-app.get("/details", (req, res) => {
-  res.render("details");
-});
-
 app.get("/about", (req, res) => {
   res.render("about");
 });
@@ -61,8 +81,12 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
+app.get("/details", (req, res) => {
+  res.render("details");
+});
+
 /* =========================
-   JOB & INTERNSHIP PAGES
+   JOB & INTERNSHIP
 ========================= */
 app.get("/jobs", (req, res) => {
   res.render("jobs");
@@ -77,9 +101,9 @@ app.get("/soon", (req, res) => {
 });
 
 /* =========================
-   DASHBOARDS
+   DASHBOARD (PROTECTED)
 ========================= */
-app.get("/student/dashboard", (req, res) => {
+app.get("/student-dashboard", isLoggedIn, (req, res) => {
   res.render("student-dashboard");
 });
 
@@ -88,8 +112,18 @@ app.get("/admin/dashboard", (req, res) => {
 });
 
 /* =========================
+   LOGOUT
+========================= */
+app.get("/logout", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
+});
+
+/* =========================
    CONTACT FORM (EMAIL + RESUME)
 ========================= */
+const upload = multer({ dest: "uploads/" });
 if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
 
 app.post("/contact", upload.single("resume"), async (req, res) => {
@@ -105,7 +139,7 @@ app.post("/contact", upload.single("resume"), async (req, res) => {
       service: "gmail",
       auth: {
         user: "gn2607@myamu.ac.in",
-        pass: "xbtt hftj lxyd zspk", // ⚠️ later env variable me daalna
+        pass: "xbtt hftj lxyd zspk", // later .env me shift karo
       },
     });
 
@@ -123,7 +157,7 @@ app.post("/contact", upload.single("resume"), async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-    res.send("✅ Message & resume sent successfully!");
+    res.send("✅ Message & Resume Sent Successfully!");
   } catch (error) {
     console.error("❌ Email error:", error);
     res.status(500).send("Error sending message.");
