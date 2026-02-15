@@ -1,45 +1,107 @@
 <%- include("../layouts/boilerplate", { body: `
 
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h1 class="mb-5 text-center fw-bold text-primary">Explore Career Opportunities</h1>
-      
-      <div class="row row-cols-1 row-cols-md-2 g-5">
+<section class="py-5 bg-light">
+  <div class="container">
+    <h1 class="mb-5 text-center fw-bold text-primary">Explore Career Opportunities</h1>
+    
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
 
-        <!-- JOB OPENINGS Card -->
-        <div class="col">
-          <div class="card shadow-lg border-0 h-100">
-            <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200" class="card-img-top rounded-top" alt="Job Openings" style="height: 220px; object-fit: cover;">
-            <div class="card-body">
-              <h4 class="card-title text-dark fw-semibold">Job Openings</h4>
-              <p class="card-text text-muted">Discover full-time career options in established companies and startups across India.</p>
-            </div>
-            <div class="card-footer bg-white text-end border-top-0">
-              <a href="/jobs" class="btn btn-outline-primary btn-sm">Available Jobs!</a>
-            </div>
+      <!-- JOB OPENINGS -->
+      <div class="col">
+        <div class="card shadow-lg border-0 h-100">
+          <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" style="height:200px;object-fit:cover;">
+          <div class="card-body">
+            <h4 class="fw-semibold">Job Openings</h4>
+            <p class="text-muted">Discover full-time career options in companies and startups across India.</p>
+          </div>
+          <div class="card-footer bg-white text-end border-0">
+            <a href="/jobs" class="btn btn-outline-primary btn-sm">Explore</a>
           </div>
         </div>
-
-        <!-- INTERNSHIPS/TRAINING Card -->
-        <div class="col">
-          <div class="card shadow-lg border-0 h-100">
-            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?fit=crop&w=1200&q=80" class="card-img-top rounded-top" alt="Internships" style="height: 220px; object-fit: cover;">
-            <div class="card-body">
-              <h4 class="card-title text-dark fw-semibold">Internships / Training</h4>
-              <p class="card-text text-muted">Apply for industry-oriented training programs and internships for hands-on experience.</p>
-            </div>
-            <div class="card-footer bg-white text-end border-top-0">
-              <a href="/details" class="btn btn-outline-primary btn-sm">Available Internships!</a>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- INTERNSHIP -->
+      <div class="col">
+        <div class="card shadow-lg border-0 h-100">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=60" class="card-img-top" style="height:200px;object-fit:cover;">
+          <div class="card-body">
+            <h4 class="fw-semibold">Internships / Training</h4>
+            <p class="text-muted">Apply for industry-oriented training and internships.</p>
+          </div>
+          <div class="card-footer bg-white text-end border-0">
+            <a href="/details" class="btn btn-outline-primary btn-sm">Explore</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALUMNI REFERRAL -->
+      <div class="col">
+        <div class="card shadow-lg border-0 h-100">
+          <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" style="height:200px;object-fit:cover;">
+          <div class="card-body">
+            <h4 class="fw-semibold">Alumni Referral</h4>
+            <p class="text-muted">Get job and internship referrals from alumni working in top companies.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ONE TO ONE -->
+      <div class="col">
+        <div class="card shadow-lg border-0 h-100">
+          <img src="https://images.pexels.com/photos/3182763/pexels-photo-3182763.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" style="height:200px;object-fit:cover;">
+          <div class="card-body">
+            <h4 class="fw-semibold">1-to-1 Talk with TPO / Seniors</h4>
+            <p class="text-muted">Book personal sessions with TPO and placed seniors.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERVIEW GUIDE -->
+      <div class="col">
+        <div class="card shadow-lg border-0 h-100">
+          <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" style="height:200px;object-fit:cover;">
+          <div class="card-body">
+            <h4 class="fw-semibold">Interview Guide & Cheat Notes</h4>
+            <p class="text-muted">Prepare with curated interview guides and cheat sheets.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENTOR -->
+      <div class="col">
+        <div class="card shadow-lg border-0 h-100">
+          <img src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" style="height:200px;object-fit:cover;">
+          <div class="card-body">
+            <h4 class="fw-semibold">Weekly / Monthly Mentor</h4>
+            <p class="text-muted">Get a personal mentor who guides and tracks your progress.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB INDIA -->
+      <div class="col">
+        <div class="card shadow-lg border-0 h-100">
+          <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" style="height:200px;object-fit:cover;">
+          <div class="card-body">
+            <h4 class="fw-semibold">Jobs in Your Country</h4>
+            <p class="text-muted">Explore verified job opportunities available in your country.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB FOREIGN -->
+      <div class="col">
+        <div class="card shadow-lg border-0 h-100">
+          <img src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" style="height:200px;object-fit:cover;">
+          <div class="card-body">
+            <h4 class="fw-semibold">Jobs Abroad</h4>
+            <p class="text-muted">Discover international career opportunities abroad.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
 ` }) %>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
