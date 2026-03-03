@@ -3,7 +3,6 @@ const methodOverride = require("method-override");
 const path = require("path");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
-const fs = require("fs");
 
 const app = express();
 
@@ -14,21 +13,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
-/* ================= SAFE UPLOAD SETUP ================= */
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    const dir = "uploads";
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    }
-    cb(null, dir);
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
-  }
+/* ================= MULTER (MEMORY STORAGE - FIXED) ================= */
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 5 * 1024 * 1024 } // 5MB limit
 });
-
-const upload = multer({ storage });
 
 /* ================= ROUTES ================= */
 
@@ -48,6 +37,9 @@ app.get("/contact", (req, res) => {
 
 app.post("/contact", upload.single("resume"), async (req, res) => {
 
+  console.log("BODY:", req.body);
+  console.log("FILE:", req.file);
+
   const {
     fullName,
     dob,
@@ -62,7 +54,7 @@ app.post("/contact", upload.single("resume"), async (req, res) => {
 
   const resume = req.file;
 
-  // Only check fields that actually exist in your form
+  // Check only text fields first
   if (
     !fullName ||
     !dob ||
@@ -72,10 +64,13 @@ app.post("/contact", upload.single("resume"), async (req, res) => {
     !designation ||
     !negotiable ||
     !location ||
-    !workMode ||
-    !resume
+    !workMode
   ) {
-    return res.send("❌ Missing required fields.");
+    return res.send("❌ Some text fields are missing.");
+  }
+
+  if (!resume) {
+    return res.send("❌ Resume not uploaded.");
   }
 
   try {
@@ -83,7 +78,7 @@ app.post("/contact", upload.single("resume"), async (req, res) => {
       service: "gmail",
       auth: {
         user: "gn2607@myamu.ac.in",
-        pass: "xbtt hftj lxyd zspk",
+        pass: "ujif gzjd yusf avho", // 🔥 replace with real Gmail App Password
       },
     });
 
@@ -105,15 +100,12 @@ Preferred Mode: ${workMode}
       attachments: [
         {
           filename: resume.originalname,
-          path: resume.path,
+          content: resume.buffer
         }
       ],
     };
 
     await transporter.sendMail(mailOptions);
-
-    // Delete file after sending (important for Render)
-    fs.unlinkSync(resume.path);
 
     res.send(`
       <div style="text-align:center;padding:40px;font-family:sans-serif;">
@@ -128,7 +120,7 @@ Preferred Mode: ${workMode}
     `);
 
   } catch (err) {
-    console.error(err);
+    console.error("MAIL ERROR:", err);
     res.status(500).send("❌ Server error while sending email.");
   }
 });
