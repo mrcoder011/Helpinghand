@@ -4,26 +4,79 @@
 <style>
 body {
   font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /* ================= NAVBAR ================= */
+
 .navbar {
   z-index: 1050;
   background: #ffffff;
 }
 
 .nav-hover:hover {
-  background-color: rgba(13,110,253,0.1);
+  background-color: rgba(13,110,253,0.08);
   transition: 0.3s ease;
+  border-radius: 8px;
+}
+
+.navbar-toggler {
+  border-radius: 10px;
+  padding: 6px 10px;
+  background: #f8f9fa;
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* MOBILE DROPDOWN FIX */
+@media (max-width: 767px) {
+
+  .navbar-collapse {
+    background: #ffffff;
+    padding: 20px;
+    margin-top: 12px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: dropdownFade 0.3s ease;
+  }
+
+  .navbar-nav {
+    gap: 15px !important;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 15px;
+    border-radius: 8px;
+  }
+
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ================= HERO ================= */
 
 .hero {
   position: relative;
-  padding: 150px 0;
+  padding: 140px 0;
   color: #fff;
-  background: linear-gradient(-45deg, #0d6efd, #6610f2, #20c997, #0dcaf0);
+  background: linear-gradient(-45deg, #0d6efd, #6610f2, #0dcaf0, #20c997);
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
 }
@@ -43,6 +96,7 @@ body {
 }
 
 /* Buttons */
+
 .btn-premium {
   background: #ffffff;
   color: #0d6efd;
@@ -50,6 +104,7 @@ body {
   border-radius: 40px;
   padding: 12px 30px;
   transition: 0.3s;
+  border: none;
 }
 
 .btn-premium:hover {
@@ -72,13 +127,13 @@ body {
   transform: translateY(-3px);
 }
 
-/* Mobile Fix */
 @media (max-width: 768px) {
   .hero-overlay {
     padding: 30px;
   }
 }
 </style>
+
 
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-md shadow-sm sticky-top border-bottom py-3">
@@ -89,7 +144,7 @@ body {
       <span class="fs-5">Amupro</span>
     </a>
 
-    <button class="navbar-toggler border-0" type="button"
+    <button class="navbar-toggler" type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
@@ -124,6 +179,7 @@ body {
 
   </div>
 </nav>
+
 
 <!-- ================= HERO ================= -->
 <section class="hero text-center">
