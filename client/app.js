@@ -18,19 +18,15 @@ app.use(session({
   saveUninitialized: false
 }));
 
-/* Pass current user to all EJS (Navbar ke liye) */
 app.use((req, res, next) => {
   res.locals.currentUser = req.session.student || null;
   next();
 });
 
 /* =========================
-   DATABASE CONNECTION
+   DATABASE
 ========================= */
-mongoose.connect("mongodb://127.0.0.1:27017/majorProject", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect("mongodb://127.0.0.1:27017/majorProject")
 .then(() => console.log("Connected to DB"))
 .catch(err => console.log("DB Error:", err));
 
@@ -45,29 +41,25 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
 /* =========================
-   LOGIN PROTECTION
+   MULTER (RENDER SAFE)
 ========================= */
-function isLoggedIn(req, res, next) {
-  if (!req.session.student) {
-    return res.redirect("/login");
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const dir = "uploads";
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+    cb(null, dir);
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
   }
-  next();
-}
+});
+
+const upload = multer({ storage: storage });
 
 /* =========================
    ROUTES
-========================= */
-
-// Listings routes
-const listingRoutes = require("./routes/listings");
-app.use("/listings", listingRoutes);
-
-// Auth routes (Login)
-const authRoutes = require("./routes/auth");
-app.use(authRoutes);
-
-/* =========================
-   MAIN PAGES
 ========================= */
 app.get("/", (req, res) => {
   res.redirect("/listings");
@@ -81,57 +73,43 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-app.get("/details", (req, res) => {
-  res.render("details");
-});
-
 /* =========================
-   JOB & INTERNSHIP
+   CONTACT FORM (FIXED)
 ========================= */
-app.get("/jobs", (req, res) => {
-  res.render("jobs");
-});
-
-app.get("/intern", (req, res) => {
-  res.render("intern");
-});
-
-app.get("/soon", (req, res) => {
-  res.render("soon");
-});
-
-/* =========================
-   DASHBOARD (PROTECTED)
-========================= */
-app.get("/student-dashboard", isLoggedIn, (req, res) => {
-  res.render("student-dashboard");
-});
-
-app.get("/admin/dashboard", (req, res) => {
-  res.render("admin-dashboard");
-});
-
-/* =========================
-   LOGOUT
-========================= */
-app.get("/logout", (req, res) => {
-  req.session.destroy(() => {
-    res.redirect("/");
-  });
-});
-
-/* =========================
-   CONTACT FORM (EMAIL + RESUME)
-========================= */
-const upload = multer({ dest: "uploads/" });
-if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
-
 app.post("/contact", upload.single("resume"), async (req, res) => {
-  const { name, email, message } = req.body;
+
+  const {
+    fullName,
+    dob,
+    mobile,
+    skills,
+    company,
+    designation,
+    negotiable,
+    location,
+    workMode
+  } = req.body;
+
   const resume = req.file;
 
-  if (!name || !email || !message || !resume) {
-    return res.send("❌ Missing required fields.");
+  // Check text fields
+  if (
+    !fullName ||
+    !dob ||
+    !mobile ||
+    !skills ||
+    !company ||
+    !designation ||
+    !negotiable ||
+    !location ||
+    !workMode
+  ) {
+    return res.send("❌ Some text fields are missing.");
+  }
+
+  // Check file
+  if (!resume) {
+    return res.send("❌ Resume not uploaded properly.");
   }
 
   try {
@@ -139,28 +117,43 @@ app.post("/contact", upload.single("resume"), async (req, res) => {
       service: "gmail",
       auth: {
         user: "gn2607@myamu.ac.in",
-        pass: "xbtt hftj lxyd zspk", // later .env me shift karo
+        pass: "xbtt hftj lxyd zspk", // move to .env later
       },
     });
 
     const mailOptions = {
-      from: `"${name}" <${email}>`,
+      from: `"${fullName}" <gn2607@myamu.ac.in>`,
       to: "gn2607@myamu.ac.in",
-      subject: `New Application from ${name}`,
-      text: `From: ${name} (${email})\n\nMessage:\n${message}`,
+      subject: `New Application from ${fullName}`,
+      text: `
+Full Name: ${fullName}
+DOB: ${dob}
+Mobile: ${mobile}
+Reason: ${skills}
+Course/Branch: ${company}
+Designation: ${designation}
+Currently Pursuing: ${negotiable}
+Location: ${location}
+Preferred Mode: ${workMode}
+      `,
       attachments: [
         {
           filename: resume.originalname,
           path: resume.path,
-        }
+        },
       ],
     };
 
     await transporter.sendMail(mailOptions);
-    res.send("✅ Message & Resume Sent Successfully!");
+
+    // Delete uploaded file after sending
+    fs.unlinkSync(resume.path);
+
+    res.send("✅ Application Sent Successfully!");
+
   } catch (error) {
-    console.error("❌ Email error:", error);
-    res.status(500).send("Error sending message.");
+    console.error("Mail Error:", error);
+    res.status(500).send("❌ Error sending message.");
   }
 });
 
