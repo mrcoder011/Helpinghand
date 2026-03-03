@@ -1,4 +1,39 @@
-<!-- Navbar -->
+<!-- ================= NAVBAR ================= -->
+<style>
+/* Mobile Navbar Fix */
+@media (max-width: 767px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    padding: 20px 0;
+    z-index: 1050;
+    border-top: 1px solid #eee;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+
+  .navbar-nav {
+    align-items: flex-start !important;
+    padding-left: 20px;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .navbar-nav .btn {
+    margin-top: 8px;
+  }
+}
+</style>
+
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top border-bottom py-3">
   <div class="container">
 
@@ -14,7 +49,7 @@
     </button>
 
     <!-- Navbar Links -->
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav ms-auto gap-3 align-items-center">
 
         <!-- Home -->
@@ -46,21 +81,18 @@
 
         <% if (currentUser) { %>
 
-          <!-- Student Name -->
           <li class="nav-item">
             <span class="fw-semibold text-primary">
               👋 <%= currentUser.email %>
             </span>
           </li>
 
-          <!-- Dashboard -->
           <li class="nav-item">
             <a href="/student-dashboard" class="btn btn-outline-success btn-sm">
               Dashboard
             </a>
           </li>
 
-          <!-- Logout -->
           <li class="nav-item">
             <a href="/logout" class="btn btn-danger btn-sm">
               Logout
@@ -69,7 +101,6 @@
 
         <% } else { %>
 
-          <!-- Login Button -->
           <li class="nav-item">
             <a href="/login" class="btn btn-outline-primary">
               <i class="fa-solid fa-user me-1"></i> Student Login
@@ -85,3 +116,4 @@
 
   </div>
 </nav>
+<!-- ================= NAVBAR END ================= -->
