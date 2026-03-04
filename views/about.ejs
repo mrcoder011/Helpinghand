@@ -10,14 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 body {
   font-family: 'Poppins', sans-serif;
   background: #f5f7fb;
 }
 
-/* ================= NAVBAR ================= */
-
+/* Navbar */
 .navbar {
   background: #ffffff;
   border-bottom: 1px solid #eee;
@@ -36,7 +34,6 @@ body {
   box-shadow: none;
 }
 
-/* Mobile collapse clean card */
 @media(max-width:768px){
   .navbar-collapse{
     background:#ffffff;
@@ -47,8 +44,7 @@ body {
   }
 }
 
-/* ================= HERO ================= */
-
+/* Hero */
 .hero-section {
   padding: 50px 20px 30px;
   text-align: center;
@@ -67,8 +63,7 @@ body {
   margin-top: 15px;
 }
 
-/* ================= CARDS ================= */
-
+/* Cards */
 .custom-card {
   background: #ffffff;
   border-radius: 18px;
@@ -93,8 +88,7 @@ body {
   border-bottom: 1px solid #f0f0f0;
 }
 
-/* ================= FEATURE BOX ================= */
-
+/* Feature Box */
 .feature-box {
   background: #ffffff;
   border-radius: 20px;
@@ -118,8 +112,7 @@ body {
   color: #666;
 }
 
-/* ================= CTA ================= */
-
+/* CTA */
 .cta-section {
   text-align: center;
   padding: 40px 20px;
@@ -143,8 +136,16 @@ body {
   font-weight: 600;
 }
 
-/* ================= FOOTER ================= */
+/* Founder Card */
+.founder-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+  text-align: center;
+}
 
+/* Footer */
 footer {
   background: #ffffff;
   font-size: 14px;
@@ -158,16 +159,14 @@ footer a {
 footer a:hover {
   color: #0d6efd;
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
   <div class="container">
-
     <a class="navbar-brand d-flex align-items-center" href="/">
       <i class="fa-solid fa-handshake-angle me-2 text-primary"></i>
       Amupro
@@ -184,12 +183,10 @@ footer a:hover {
         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
       </ul>
     </div>
-
   </div>
 </nav>
 
-
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <div class="hero-section">
   <h1>Empowering Campus Youth for Better Career Opportunities</h1>
   <p>
@@ -198,21 +195,19 @@ footer a:hover {
   </p>
 </div>
 
-
 <div class="container">
 
   <!-- Challenges + Help -->
   <div class="row g-3 mb-4">
-
     <div class="col-12 col-md-6">
       <div class="custom-card">
         <h4 class="text-danger mb-3">Challenges Students Face</h4>
         <ul class="feature-list">
-          <li> Lack of industry exposure</li>
-          <li> No proper mentorship</li>
-          <li> Difficulty getting referrals</li>
-          <li> Interview preparation confusion</li>
-          <li> Limited global access</li>
+          <li>Lack of industry exposure</li>
+          <li>No proper mentorship</li>
+          <li>Difficulty getting referrals</li>
+          <li>Interview preparation confusion</li>
+          <li>Limited global access</li>
         </ul>
       </div>
     </div>
@@ -221,43 +216,37 @@ footer a:hover {
       <div class="custom-card">
         <h4 class="text-success mb-3">How Amupro Helps</h4>
         <ul class="feature-list">
-          <li> Verified Job & Internship Opportunities</li>
-          <li> Alumni Referral Support</li>
-          <li> One-to-One Career Guidance</li>
-          <li> Interview Preparation Guides</li>
-          <li> Personal Mentorship</li>
+          <li>Verified Job & Internship Opportunities</li>
+          <li>Alumni Referral Support</li>
+          <li>One-to-One Career Guidance</li>
+          <li>Interview Preparation Guides</li>
+          <li>Personal Mentorship</li>
         </ul>
       </div>
     </div>
-
   </div>
 
   <!-- Feature Grid -->
   <div class="row g-3 mb-4">
-
     <div class="col-12 col-md-4">
       <div class="feature-box">
         <h5>🎓 Alumni Referral</h5>
         <p>Connect with alumni and increase your chances of selection.</p>
       </div>
     </div>
-
     <div class="col-12 col-md-4">
       <div class="feature-box">
         <h5>💬 Career Guidance</h5>
         <p>Talk directly with experienced mentors and seniors.</p>
       </div>
     </div>
-
     <div class="col-12 col-md-4">
       <div class="feature-box">
         <h5>📘 Interview Guide</h5>
         <p>Curated interview notes and preparation material.</p>
       </div>
     </div>
-
   </div>
-
 </div>
 
 <!-- CTA -->
@@ -267,9 +256,32 @@ footer a:hover {
   <a href="/listings" class="btn btn-primary">Explore Opportunities</a>
 </div>
 
+<!-- FOUNDER SECTION -->
+<div class="container my-5">
+  <div class="founder-card">
+    <img src="/images/shafatullah.jpg"
+         alt="Founder Md Shafatullah"
+         style="width:100px;height:100px;border-radius:50%;object-fit:cover;"
+         class="mb-3">
 
-<!-- ================= FOOTER ================= -->
-<footer class="pt-4 pb-3 mt-4">
+    <h6 class="text-muted mb-1">Founder</h6>
+    <h4 class="fw-bold text-primary mb-2">Md Shafatullah</h4>
+
+    <p class="text-muted small mb-3">
+      Building Amupro to empower campus students with verified career opportunities,
+      industry guidance, and real-world exposure.
+    </p>
+
+    <a href="https://www.linkedin.com/in/md-shafatullah-6a22541a6"
+       target="_blank"
+       class="btn btn-outline-primary btn-sm">
+       <i class="fab fa-linkedin me-2"></i> View LinkedIn Profile
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="pt-4 pb-3">
   <div class="container text-center">
     <p class="small text-muted mb-1">© 2026 Amupro Pvt. Ltd.</p>
   </div>
