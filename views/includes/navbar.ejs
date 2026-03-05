@@ -136,28 +136,38 @@ body {
 
 
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-md shadow-sm sticky-top border-bottom py-3">
-  <div class="container">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top border-bottom py-3">
+  <div class="container d-flex align-items-center">
 
-   <a class="navbar-brand fw-bold text-primary d-flex flex-column align-items-start" href="/">
-  
-  <div class="d-flex align-items-center">
-    <i class="fa-solid fa-handshake-angle me-2 fs-4"></i>
-    <span class="fs-5">Amupro</span>
-  </div>
+    <!-- BRAND -->
+    <a class="navbar-brand fw-bold text-primary d-flex flex-column align-items-start me-auto" href="/">
+      
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-handshake-angle me-2 fs-4"></i>
+        <span class="fs-5">Amupro</span>
+      </div>
 
-  <small class="text-muted" style="font-size:11px;">
-    Empowering Students with Real Opportunities
-  </small>
+      <small class="text-muted" style="font-size:11px;">
+        Empowering Students with Real Opportunities
+      </small>
 
-</a>
-    <button class="navbar-toggler" type="button"
+    </a>
+
+    <!-- TOGGLE BUTTON -->
+    <button class="navbar-toggler border-0 shadow-none" type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarNav">
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+
       <span class="navbar-toggler-icon"></span>
+
     </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <!-- NAV LINKS -->
+    <div class="collapse navbar-collapse justify-content-end mt-3 mt-md-0" id="navbarNav">
+
       <ul class="navbar-nav ms-auto gap-md-3 align-items-md-center">
 
         <li class="nav-item">
@@ -172,9 +182,11 @@ body {
           <a class="nav-link fw-semibold nav-hover" href="/contact">Contact us!</a>
         </li>
 
+        <!-- NOTIFICATION -->
         <li class="nav-item position-relative">
-          <a class="nav-link" href="#">
+          <a class="nav-link d-flex align-items-center" href="#">
             <i class="fa-solid fa-bell fs-5"></i>
+
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               99+
             </span>
@@ -182,11 +194,11 @@ body {
         </li>
 
       </ul>
+
     </div>
 
   </div>
 </nav>
-
 
 <!-- ================= HERO ================= 
 <section class="hero text-center position-relative">
