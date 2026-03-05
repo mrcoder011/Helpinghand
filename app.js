@@ -41,6 +41,9 @@ app.get("/", (req, res) => {
 app.get("/details", (req, res) => {
     res.render("details");
 });
+app.get("/jintern", (req, res) => {
+    res.render("listings/jintern");
+});
 
 app.get("/about", (req, res) => {
     res.render("about");
