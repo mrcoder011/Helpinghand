@@ -1,134 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Core Engineering Job Access</title>
+<%- include("./layouts/boilerplate", { body: `
 
-<style>
-
-body{
-font-family:'Segoe UI',sans-serif;
-background:#f4f6f9;
-}
-
-.container{
-max-width:1000px;
-margin:50px auto;
-padding:20px;
-}
-
-.heading{
-text-align:center;
-margin-bottom:40px;
-}
-
-.heading h2{
-font-size:30px;
-font-weight:700;
-color:#111;
-}
-
-.cards{
-display:flex;
-gap:25px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.card{
-background:#fff;
-width:420px;
-padding:30px;
-border-radius:16px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 18px 40px rgba(0,0,0,0.15);
-}
-
-.card-title{
-font-size:24px;
-font-weight:700;
-margin-bottom:15px;
-}
-
-.basic{
-border-top:5px solid #0077ff;
-}
-
-.prime{
-border-top:5px solid #ff6b00;
-}
-
-.features{
-margin-top:15px;
-line-height:1.8;
-color:#444;
-}
-
-.features li{
-margin-bottom:8px;
-}
-
-.badge{
-display:inline-block;
-background:#e63946;
-color:#fff;
-padding:6px 12px;
-border-radius:20px;
-font-size:13px;
-margin-bottom:10px;
-}
-
-.join-btn{
-display:block;
-text-align:center;
-margin-top:25px;
-background:#25D366;
-color:white;
-padding:12px;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-.join-btn:hover{
-background:#1ebe5d;
-}
-
-@media(max-width:768px){
-
-.cards{
-flex-direction:column;
-align-items:center;
-}
-
-.card{
-width:100%;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
+<section class="py-5" style="background:#f4f6f9;">
 <div class="container">
 
-<div class="heading">
-<h2>Core Engineering Job Access Plans</h2>
-<p>Join WhatsApp groups to receive verified Core Engineering job opportunities.</p>
+<!-- HEADING -->
+
+<div class="heading text-center mb-5">
+
+<h2 class="fw-bold mb-2">
+Core Engineering Job Access Plans
+</h2>
+
+<p class="text-muted">
+Join WhatsApp groups to receive verified Core Engineering job opportunities.
+</p>
+
 </div>
+
+
+<!-- CARDS -->
 
 <div class="cards">
 
 <!-- BASIC PLAN -->
+
 <div class="card basic">
 
 <div class="badge">Basic Core Access</div>
@@ -157,6 +52,7 @@ Join Core Basic WhatsApp Group
 
 
 <!-- PRIME PLAN -->
+
 <div class="card prime">
 
 <div class="badge">Premium Core Access</div>
@@ -186,6 +82,132 @@ Join Core Prime WhatsApp Group
 </div>
 
 </div>
+</section>
 
-</body>
-</html>
+
+
+<style>
+
+/* container spacing */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+
+/* cards grid */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+
+/* card */
+
+.card{
+background:#fff;
+padding:28px;
+border-radius:16px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 40px rgba(0,0,0,0.15);
+}
+
+
+/* card title */
+
+.card-title{
+font-size:22px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+
+/* borders */
+
+.basic{
+border-top:5px solid #0077ff;
+}
+
+.prime{
+border-top:5px solid #ff6b00;
+}
+
+
+/* features */
+
+.features{
+margin-top:10px;
+line-height:1.8;
+color:#444;
+padding-left:0;
+list-style:none;
+}
+
+.features li{
+margin-bottom:8px;
+}
+
+
+/* badge */
+
+.badge{
+display:inline-block;
+background:#e63946;
+color:#fff;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+margin-bottom:12px;
+}
+
+
+/* button */
+
+.join-btn{
+display:block;
+text-align:center;
+margin-top:22px;
+background:#25D366;
+color:white;
+padding:13px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.join-btn:hover{
+background:#1ebe5d;
+}
+
+
+/* mobile */
+
+@media(max-width:768px){
+
+.card{
+padding:22px;
+}
+
+.card-title{
+font-size:20px;
+}
+
+.join-btn{
+width:100%;
+}
+
+}
+
+</style>
+
+` }) %>
