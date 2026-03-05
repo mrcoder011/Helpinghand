@@ -1,5 +1,148 @@
-<%- include("../layouts/boilerplate", {
-body: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Amupro - About</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fb;
+}
+
+/* Navbar */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: #0d6efd !important;
+}
+
+/* Hero */
+.hero-section {
+  padding: 50px 20px 30px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-weight: 700;
+  font-size: 22px;
+  color: #0d6efd;
+}
+
+.hero-section p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Cards */
+.custom-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Founding Team */
+.team-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 35px 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  text-align: center;
+  height: 100%;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.team-icon {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+  margin: 0 auto 18px auto;
+}
+
+.team-card h6 {
+  font-size: 13px;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+.team-card h5 {
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cta-section .btn {
+  width: 100%;
+  border-radius: 30px;
+  padding: 12px;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  background: #ffffff;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <i class="fa-solid fa-handshake-angle me-2 text-primary"></i>
+      Amupro
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
 <div class="hero-section">
   <h1>Empowering Campus Youth for Better Career Opportunities</h1>
   <p>
@@ -10,6 +153,7 @@ body: `
 
 <div class="container">
 
+  <!-- FOUNDING TEAM -->
   <div class="text-center mb-5">
     <h3 class="fw-bold text-primary">Founding Team</h3>
     <p class="text-muted">Leadership driving Amupro’s mission and vision</p>
@@ -17,41 +161,64 @@ body: `
 
   <div class="row g-4 mb-5">
 
+    <!-- Founder -->
     <div class="col-12 col-md-4">
       <div class="team-card">
+        <div class="team-icon">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
         <h6>FOUNDER</h6>
         <h5>Md Shafatullah</h5>
-        <p>Visionary founder of Amupro empowering campus youth.</p>
+        <p>
+          Visionary founder of Amupro, dedicated to empowering campus youth 
+          through structured career guidance, verified opportunities, and 
+          real-world industry exposure.
+        </p>
         <a href="https://www.linkedin.com/in/md-shafatullah-6a22541a6"
            target="_blank"
            class="btn btn-outline-primary btn-sm">
-           LinkedIn Profile
+           <i class="fab fa-linkedin me-2"></i> LinkedIn Profile
         </a>
       </div>
     </div>
 
+    <!-- Co-Founder Safiullah -->
     <div class="col-12 col-md-4">
       <div class="team-card">
+        <div class="team-icon">
+          <i class="fa-solid fa-user-gear"></i>
+        </div>
         <h6>CO-FOUNDER</h6>
         <h5>Safiullah</h5>
-        <p>Strategic planning and operational growth contributor.</p>
+        <p>
+          Co-founder contributing to strategic planning and operational growth, 
+          ensuring sustainable development and innovation within the Amupro ecosystem.
+        </p>
         <a href="https://www.linkedin.com/in/safiullah-rahmani-a90695378"
            target="_blank"
            class="btn btn-outline-primary btn-sm">
-           LinkedIn Profile
+           <i class="fab fa-linkedin me-2"></i> LinkedIn Profile
         </a>
       </div>
     </div>
 
+    <!-- Co-Founder Abu Bilal -->
     <div class="col-12 col-md-4">
       <div class="team-card">
+        <div class="team-icon">
+          <i class="fa-solid fa-user"></i>
+        </div>
         <h6>CO-FOUNDER</h6>
         <h5>Abu Bilal</h5>
-        <p>Focused on outreach and partnerships expansion.</p>
+        <p>
+          Co-founder focused on expanding outreach, strengthening partnerships, 
+          and enhancing platform accessibility to connect more students 
+          with impactful career opportunities.
+        </p>
         <a href="https://www.linkedin.com/in/abu-bilal-120167349"
            target="_blank"
            class="btn btn-outline-primary btn-sm">
-           LinkedIn Profile
+           <i class="fab fa-linkedin me-2"></i> LinkedIn Profile
         </a>
       </div>
     </div>
@@ -60,10 +227,20 @@ body: `
 
 </div>
 
-<div class="cta-section text-center">
+<!-- CTA -->
+<div class="cta-section">
   <h3 class="text-primary fw-bold">Start Your Career Journey Today</h3>
   <p class="text-muted">Join thousands of students building their future with Amupro.</p>
   <a href="/listings" class="btn btn-primary">Explore Opportunities</a>
 </div>
-`
-}) %>
+
+<!-- FOOTER -->
+<footer class="pt-4 pb-3 mt-4 text-center">
+  <div class="container">
+    <p class="small text-muted mb-1">© 2026 Amupro Pvt. Ltd.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
