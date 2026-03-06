@@ -1,123 +1,173 @@
 <%- include("../layouts/boilerplate", { body: `
 
-<section class="py-5 bg-light">
+<section class="premium-section">
 
-<div class="container">
+<div class="container text-center">
 
-<h2 class="text-center fw-bold text-primary mb-4">
-Internships & Training Opportunities
-</h2>
+<h3 class="fw-bold text-primary mb-3">
+Internship Guidance Programs
+</h3>
 
-<div class="row justify-content-center mb-5">
-<div class="col-md-6">
-
-<input 
-type="text"
-id="searchInput"
-class="form-control form-control-lg shadow-sm"
-placeholder="Search domain (Mechanical, Electrical, Civil...)"
-onkeyup="searchInternship()"
->
-
-</div>
-</div>
-
-
-<div class="row g-4">
-
-<div class="col-md-4 internship-card" data-domain="mechanical">
-<div class="card h-100 shadow-sm border-0">
-<div class="card-body d-flex flex-column">
-
-<h5 class="fw-semibold text-primary">
-Mechanical Design Intern
-</h5>
-
-<p class="text-muted small">
-Work on CAD modeling and product design with senior engineers.
+<p class="text-muted mb-5">
+Get professional guidance to secure internships in companies and prestigious institutes like IITs, NITs and universities.
 </p>
 
-<ul class="small text-muted flex-grow-1">
-<li><b>Domain:</b> Mechanical</li>
-<li><b>Location:</b> Pune</li>
-<li><b>Stipend:</b> ₹12,000 / month</li>
-<li><b>Skills:</b> SolidWorks, AutoCAD</li>
+<div class="row g-4 justify-content-center">
+
+
+<!-- COMPANY INTERNSHIP GUIDANCE -->
+
+<div class="col-md-5">
+
+<div class="premium-card">
+
+<h5 class="fw-bold text-primary">
+Internship in Companies
+</h5>
+
+<div class="price">₹99</div>
+
+<ul class="premium-features">
+
+<li>✔ Internship application guidance</li>
+<li>✔ Resume improvement support</li>
+<li>✔ Interview preparation</li>
+<li>✔ Internship roadmap</li>
+<li>✔ Company application strategy</li>
+
 </ul>
 
-<a href="#" class="btn btn-outline-primary btn-sm mt-auto">
-Apply Now
+<p class="small text-muted">
+We guide you step-by-step to secure internships in reputed companies and startups.
+</p>
+
+<a href="/contact" class="btn btn-primary action-btn">
+Get Guidance
 </a>
 
 </div>
-</div>
+
 </div>
 
-<div class="col-md-4 internship-card" data-domain="electrical">
-<div class="card h-100 shadow-sm border-0">
-<div class="card-body d-flex flex-column">
 
-<h5 class="fw-semibold text-primary">
-Electrical Systems Intern
+
+<!-- RESEARCH INTERNSHIP -->
+
+<div class="col-md-5">
+
+<div class="premium-card">
+
+<h5 class="fw-bold text-primary">
+Research Internship (IIT / NIT / Universities)
 </h5>
 
-<p class="text-muted small">
-Assist in electrical circuit design and power system analysis.
-</p>
+<div class="price">₹149</div>
 
-<ul class="small text-muted flex-grow-1">
-<li><b>Domain:</b> Electrical</li>
-<li><b>Location:</b> Bangalore</li>
-<li><b>Stipend:</b> ₹10,000 / month</li>
-<li><b>Skills:</b> MATLAB, Circuit Analysis</li>
+<ul class="premium-features">
+
+<li>✔ IIT Summer Internship guidance</li>
+<li>✔ NIT Winter Internship programs</li>
+<li>✔ Emailing professors strategy</li>
+<li>✔ SOP & Resume preparation</li>
+<li>✔ Application guidance</li>
+
 </ul>
 
-<a href="#" class="btn btn-outline-primary btn-sm mt-auto">
-Apply Now
+<p class="small text-muted">
+If you want Summer or Winter internships in IITs, NITs or prestigious universities, we will guide you through the complete process.
+</p>
+
+<a href="/contact" class="btn btn-primary action-btn">
+Start Guidance
 </a>
 
 </div>
+
 </div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
-<script>
 
-function searchInternship(){
-
-let input = document.getElementById("searchInput").value.toLowerCase()
-
-let cards = document.querySelectorAll(".internship-card")
-
-cards.forEach(function(card){
-
-let domain = card.getAttribute("data-domain")
-
-if(domain.includes(input)){
-card.style.display="block"
-}
-else{
-card.style.display="none"
-}
-
-})
-
-}
-
-</script>
 
 <style>
 
-.card{
-border-radius:12px;
-transition:0.3s;
+/* SECTION */
+
+.premium-section{
+padding:70px 0;
+background:#f4f6f9;
 }
 
-.card:hover{
+/* CARD */
+
+.premium-card{
+background:#fff;
+padding:28px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.premium-card:hover{
 transform:translateY(-6px);
-box-shadow:0 18px 40px rgba(0,0,0,0.12);
+box-shadow:0 18px 45px rgba(0,0,0,0.12);
+}
+
+/* PRICE */
+
+.price{
+font-size:28px;
+font-weight:700;
+margin:10px 0;
+color:#111;
+}
+
+/* FEATURES */
+
+.premium-features{
+list-style:none;
+padding:0;
+margin:15px 0;
+text-align:left;
+}
+
+.premium-features li{
+margin-bottom:8px;
+font-size:14px;
+color:#555;
+}
+
+/* BUTTON */
+
+.action-btn{
+margin-top:auto;
+width:100%;
+padding:12px;
+font-weight:600;
+border-radius:8px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.premium-card{
+padding:22px;
+}
+
+.price{
+font-size:24px;
+}
+
 }
 
 </style>

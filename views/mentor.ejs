@@ -1,0 +1,174 @@
+<%- include("layouts/boilerplate", { body: `
+
+<section class="mentorship-section">
+
+<div class="container text-center">
+
+<h2 class="fw-bold text-primary mb-3">
+Career Mentorship Program
+</h2>
+
+<p class="text-muted mb-5">
+Career mentorship is very important to guide you in the right direction. 
+Experienced mentors help you choose the right domain based on your interests, 
+improve your skills and move faster toward your career goals.
+</p>
+
+<div class="row g-4 justify-content-center">
+
+
+<!-- BASIC CAREER MENTORSHIP -->
+
+<div class="col-md-5">
+
+<div class="mentor-card">
+
+<h5 class="fw-bold text-primary">
+Basic Career Mentorship
+</h5>
+
+<div class="price">₹49</div>
+
+<ul class="features">
+
+<li>✔ Career guidance session</li>
+<li>✔ Domain selection advice</li>
+<li>✔ Internship roadmap</li>
+<li>✔ Skill development tips</li>
+
+</ul>
+
+<p class="small text-muted">
+Understand your career direction and get guidance on how to start building skills in the right field.
+</p>
+
+<a href="/contact" class="btn btn-primary mentor-btn">
+Get Mentorship
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- DOMAIN MENTORSHIP -->
+
+<div class="col-md-5">
+
+<div class="mentor-card">
+
+<h5 class="fw-bold text-primary">
+Domain Mentorship
+</h5>
+
+<div class="price">₹99</div>
+
+<ul class="features">
+
+<li>✔ Guidance in your interested domain</li>
+<li>✔ Skill roadmap preparation</li>
+<li>✔ Internship strategy</li>
+<li>✔ Resume improvement suggestions</li>
+
+</ul>
+
+<p class="small text-muted">
+Get guidance from experienced mentors who are already working in the field you want to pursue.
+</p>
+
+<a href="/contact" class="btn btn-primary mentor-btn">
+Start Mentorship
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+/* SECTION */
+
+.mentorship-section{
+padding:70px 0;
+background:#f4f6f9;
+}
+
+/* CARD */
+
+.mentor-card{
+background:#fff;
+padding:28px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.mentor-card:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 45px rgba(0,0,0,0.12);
+}
+
+/* PRICE */
+
+.price{
+font-size:28px;
+font-weight:700;
+margin:10px 0;
+}
+
+/* FEATURES */
+
+.features{
+list-style:none;
+padding:0;
+margin:15px 0;
+text-align:left;
+}
+
+.features li{
+margin-bottom:8px;
+font-size:14px;
+color:#555;
+}
+
+/* BUTTON */
+
+.mentor-btn{
+width:100%;
+padding:12px;
+font-weight:600;
+border-radius:8px;
+margin-top:auto;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.mentor-card{
+padding:22px;
+}
+
+.price{
+font-size:24px;
+}
+
+}
+
+</style>
+
+` }) %>

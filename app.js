@@ -47,6 +47,9 @@ app.get("/jintern", (req, res) => {
 app.get("/core", (req, res) => {
   res.render("core");
 });
+app.get("/mentor", (req, res) => {
+  res.render("mentor");
+});
 app.get("/about", (req, res) => {
     res.render("about");
 });
