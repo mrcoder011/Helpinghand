@@ -1,36 +1,82 @@
 <%- include("./layouts/boilerplate", { body: `
 
-<section class="py-5" style="background:#f4f6f9;">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+<div class="container">
+
+<a class="navbar-brand d-flex align-items-center gap-2" href="/">
+
+<i class="fa-solid fa-handshake text-primary"></i>
+
+<div class="d-flex flex-column">
+
+<span class="fw-bold text-primary">Amupro</span>
+<small class="text-muted tagline">Empowering Students with Real Opportunities</small>
+
+</div>
+
+</a>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navMenu">
+
+<ul class="navbar-nav align-items-center gap-3">
+
+<li class="nav-item">
+<a class="nav-link" href="/">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/about">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/contact">Contact us!</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+</nav>
+
+
+
+<section class="plans-section">
+
 <div class="container">
 
 <!-- HEADING -->
 
-<div class="heading text-center mb-5">
+<div class="heading text-center">
 
-<h2 class="fw-bold mb-2">
-Core Engineering Job Access Plans
-</h2>
+<h2>Core Engineering Job Access Plans</h2>
 
-<p class="text-muted">
+<p>
 Join WhatsApp groups to receive verified Core Engineering job opportunities.
 </p>
 
 </div>
 
 
-<!-- CARDS -->
 
-<div class="cards">
+<!-- PLANS -->
+
+<div class="plans-wrapper">
 
 <!-- BASIC PLAN -->
 
-<div class="card basic">
+<div class="plan-card basic">
 
 <div class="badge">Basic Core Access</div>
 
-<div class="card-title">
+<h3 class="plan-title">
 Basic Core Subscription
-</div>
+</h3>
 
 <ul class="features">
 
@@ -51,15 +97,16 @@ Join Core Basic WhatsApp Group
 </div>
 
 
+
 <!-- PRIME PLAN -->
 
-<div class="card prime">
+<div class="plan-card prime">
 
 <div class="badge">Premium Core Access</div>
 
-<div class="card-title">
+<h3 class="plan-title">
 Prime Core Subscription
-</div>
+</h3>
 
 <ul class="features">
 
@@ -82,56 +129,97 @@ Join Core Prime WhatsApp Group
 </div>
 
 </div>
+
 </section>
 
 
 
 <style>
 
-/* container spacing */
+/* NAVBAR */
+
+.navbar{
+padding:10px 0;
+}
+
+.navbar-brand small{
+font-size:11px;
+line-height:1;
+}
+
+.nav-link{
+font-weight:500;
+}
+
+
+
+/* SECTION */
+
+.plans-section{
+background:#f4f6f9;
+padding:60px 15px;
+}
 
 .container{
 max-width:1100px;
 margin:auto;
-padding:20px;
 }
 
 
-/* cards grid */
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+/* HEADING */
+
+.heading{
+margin-bottom:40px;
+}
+
+.heading h2{
+font-size:28px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.heading p{
+color:#666;
 }
 
 
-/* card */
 
-.card{
+/* WRAPPER */
+
+.plans-wrapper{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+max-width:900px;
+margin:auto;
+}
+
+
+
+/* CARD */
+
+.plan-card{
 background:#fff;
-padding:28px;
-border-radius:16px;
+flex:1 1 380px;
+max-width:420px;
+padding:25px;
+border-radius:14px;
 box-shadow:0 8px 25px rgba(0,0,0,0.08);
 transition:.3s;
+display:flex;
+flex-direction:column;
 }
 
-.card:hover{
+.plan-card:hover{
 transform:translateY(-6px);
-box-shadow:0 18px 40px rgba(0,0,0,0.15);
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
 }
 
 
-/* card title */
 
-.card-title{
-font-size:22px;
-font-weight:700;
-margin-bottom:15px;
-}
-
-
-/* borders */
+/* BORDER */
 
 .basic{
 border-top:5px solid #0077ff;
@@ -142,46 +230,59 @@ border-top:5px solid #ff6b00;
 }
 
 
-/* features */
 
-.features{
-margin-top:10px;
-line-height:1.8;
-color:#444;
-padding-left:0;
-list-style:none;
-}
-
-.features li{
-margin-bottom:8px;
-}
-
-
-/* badge */
+/* BADGE */
 
 .badge{
-display:inline-block;
 background:#e63946;
 color:#fff;
-padding:6px 12px;
+padding:6px 14px;
 border-radius:20px;
-font-size:13px;
+font-size:12px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+
+
+/* TITLE */
+
+.plan-title{
+font-size:20px;
+font-weight:700;
 margin-bottom:12px;
 }
 
 
-/* button */
+
+/* FEATURES */
+
+.features{
+list-style:none;
+padding:0;
+margin:10px 0;
+}
+
+.features li{
+font-size:14px;
+margin-bottom:8px;
+color:#444;
+}
+
+
+
+/* BUTTON */
 
 .join-btn{
-display:block;
-text-align:center;
-margin-top:22px;
+margin-top:auto;
 background:#25D366;
-color:white;
-padding:13px;
+color:#fff;
+text-align:center;
+padding:12px;
 border-radius:8px;
 text-decoration:none;
 font-weight:600;
+font-size:14px;
 transition:.3s;
 }
 
@@ -190,16 +291,46 @@ background:#1ebe5d;
 }
 
 
-/* mobile */
 
-@media(max-width:768px){
+/* TABLET */
 
-.card{
-padding:22px;
+@media(max-width:900px){
+
+.heading h2{
+font-size:24px;
 }
 
-.card-title{
-font-size:20px;
+.plan-card{
+flex:1 1 100%;
+max-width:100%;
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.plans-section{
+padding:40px 10px;
+}
+
+.heading h2{
+font-size:22px;
+}
+
+.heading p{
+font-size:14px;
+}
+
+.plan-card{
+padding:20px;
+}
+
+.features li{
+font-size:13px;
 }
 
 .join-btn{
