@@ -4,28 +4,20 @@ const path = require("path");
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const fs = require("fs");
-const upload = multer({ dest: "uploads/" }); // Folder to save resume
+
+const upload = multer({ dest: "uploads/" });
 
 const app = express();
 
-// ❌ Removed MongoDB connection
-// const mongoose = require("mongoose");
-// mongoose.connect("mongodb://127.0.0.1:27017/majorProject", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// }).then(() => {
-//     console.log("Connected to DB");
-// }).catch((err) => {
-//     console.log("Error:", err);
-// });
-
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
-// ✅ If your listingRoutes depend on MongoDB, skip them
+
+// listing routes try block
 try {
     const listingRoutes = require("./routes/listings");
     app.use("/listings", listingRoutes);
@@ -33,23 +25,40 @@ try {
     console.warn("⚠️ Skipping /listings routes — MongoDB not connected.");
 }
 
-// Main Routes
+
+// MAIN ROUTES
+
 app.get("/", (req, res) => {
-    res.redirect("/listings");
+    res.render("listings/index");
 });
 
 app.get("/details", (req, res) => {
     res.render("details");
 });
+
 app.get("/jintern", (req, res) => {
     res.render("listings/jintern");
 });
+
 app.get("/core", (req, res) => {
-  res.render("core");
+    res.render("core");
 });
+
 app.get("/mentor", (req, res) => {
-  res.render("mentor");
+    res.render("mentor");
 });
+
+app.get("/senior", (req, res) => {
+    res.render("senior");
+});
+
+app.get("/resume", (req, res) => {
+    res.render("resume");
+});
+app.get("/mock", (req, res) => {
+    res.render("mock");
+});
+
 app.get("/about", (req, res) => {
     res.render("about");
 });
@@ -58,9 +67,27 @@ app.get("/contact", (req, res) => {
     res.render("contact");
 });
 
-if (!fs.existsSync("uploads")) fs.mkdirSync("uploads");
+app.get("/jobs", (req, res) => {
+    res.render("jobs");
+});
 
-// ✅ Contact form logic here
+app.get("/intern", (req, res) => {
+    res.render("intern");
+});
+
+app.get("/soon", (req, res) => {
+    res.render("soon");
+});
+
+
+// uploads folder ensure
+if (!fs.existsSync("uploads")) {
+    fs.mkdirSync("uploads");
+}
+
+
+// CONTACT FORM EMAIL
+
 app.post("/contact", upload.single("resume"), async (req, res) => {
 
     const {
@@ -77,7 +104,6 @@ app.post("/contact", upload.single("resume"), async (req, res) => {
 
     const resume = req.file;
 
-    // ✅ Only check fields that actually exist in your form
     if (
         !fullName ||
         !dob ||
@@ -99,7 +125,7 @@ app.post("/contact", upload.single("resume"), async (req, res) => {
             service: "gmail",
             auth: {
                 user: "gn2607@myamu.ac.in",
-                pass: "ujifgzjdyusfavho", // no spaces
+                pass: "ujifgzjdyusfavho"
             },
         });
 
@@ -121,7 +147,7 @@ Preferred Mode: ${workMode}
             attachments: [
                 {
                     filename: resume.originalname,
-                    path: resume.path,
+                    path: resume.path
                 }
             ],
         };
@@ -144,18 +170,9 @@ Preferred Mode: ${workMode}
         console.error("❌ Email error:", err);
         res.status(500).send("❌ Server error while sending email.");
     }
-});
-app.get("/jobs", (req, res) => {
-    res.render("jobs");
+
 });
 
-app.get(`/intern`, (req, res) => {
-    res.render("intern");
-});
-
-app.get("/soon", (req, res) => {
-    res.render("soon");
-});
 
 app.listen(3000, () => {
     console.log("🚀 Server running on http://localhost:3000");

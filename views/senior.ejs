@@ -1,0 +1,177 @@
+<%- include("layouts/boilerplate", { body: `
+
+<section class="senior-section">
+
+<div class="container text-center">
+
+<h2 class="fw-bold text-primary mb-3">
+Talk with Experienced Seniors
+</h2>
+
+<p class="text-muted mb-5">
+Connect directly with seniors who have already achieved what you want. 
+Get guidance, clear your doubts and move confidently toward your career goals.
+</p>
+
+
+<div class="row g-4 justify-content-center">
+
+
+<!-- CARD 1 -->
+
+<div class="col-md-5">
+
+<div class="senior-card">
+
+<h5 class="fw-bold text-primary">
+Talk with Seniors Placed in Companies
+</h5>
+
+<div class="price">₹29</div>
+
+<ul class="features">
+
+<li>✔ Guidance from seniors working in companies</li>
+<li>✔ MNC and Non-MNC industry insights</li>
+<li>✔ Internship & job preparation tips</li>
+<li>✔ Referral guidance</li>
+<li>✔ Career growth advice</li>
+
+</ul>
+
+<p class="small text-muted">
+Connect with seniors working in various industries and get real guidance about jobs, internships and career growth.
+</p>
+
+<a href="/contact" class="btn btn-primary action-btn">
+Connect with Senior
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- CARD 2 -->
+
+<div class="col-md-5">
+
+<div class="senior-card">
+
+<h5 class="fw-bold text-primary">
+Talk with Seniors in Higher Studies (Abroad)
+</h5>
+
+<div class="price">₹59</div>
+
+<ul class="features">
+
+<li>✔ Fully funded scholarship guidance</li>
+<li>✔ Guidance for universities abroad</li>
+<li>✔ Application & SOP tips</li>
+<li>✔ Insights from students studying abroad</li>
+<li>✔ Countries: Malaysia, Taiwan, Saudi, Oman, Dubai etc.</li>
+
+</ul>
+
+<p class="small text-muted">
+Talk with seniors studying in universities like KFUPM, University of Malaysia, Taiwan universities, IIT Delhi Abu Dhabi and other prestigious campuses.
+</p>
+
+<a href="/contact" class="btn btn-primary action-btn">
+Talk with Senior
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+/* SECTION */
+
+.senior-section{
+padding:70px 0;
+background:#f4f6f9;
+}
+
+/* CARD */
+
+.senior-card{
+background:#fff;
+padding:30px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.senior-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* PRICE */
+
+.price{
+font-size:30px;
+font-weight:700;
+margin:10px 0;
+color:#111;
+}
+
+/* FEATURES */
+
+.features{
+list-style:none;
+padding:0;
+margin:15px 0;
+text-align:left;
+}
+
+.features li{
+margin-bottom:8px;
+font-size:14px;
+color:#555;
+}
+
+/* BUTTON */
+
+.action-btn{
+width:100%;
+padding:12px;
+font-weight:600;
+border-radius:8px;
+margin-top:auto;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.senior-card{
+padding:22px;
+}
+
+.price{
+font-size:24px;
+}
+
+}
+
+</style>
+
+` }) %>

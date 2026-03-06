@@ -1,0 +1,175 @@
+<%- include("layouts/boilerplate", { body: `
+
+<section class="mock-section">
+
+<div class="container text-center">
+
+<h2 class="fw-bold text-primary mb-3">
+Mock Interview Practice
+</h2>
+
+<p class="text-muted mb-5">
+Practice real interview questions with experienced seniors and improve your confidence before your actual interviews.
+</p>
+
+<div class="row g-4 justify-content-center">
+
+
+<!-- INTERNSHIP MOCK INTERVIEW -->
+
+<div class="col-md-5">
+
+<div class="mock-card">
+
+<h5 class="fw-bold text-primary">
+Internship Mock Interview
+</h5>
+
+<div class="price">₹29</div>
+
+<ul class="features">
+
+<li>✔ Real-time mock interview session</li>
+<li>✔ Interview practice with mentors</li>
+<li>✔ Common internship interview questions</li>
+<li>✔ Feedback to improve your answers</li>
+<li>✔ Confidence building tips</li>
+
+</ul>
+
+<p class="small text-muted">
+Conduct a mock interview before your internship interviews and gain real-time experience with guidance from seniors.
+</p>
+
+<a href="/contact" class="btn btn-primary action-btn">
+Start Practice
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- JOB MOCK INTERVIEW -->
+
+<div class="col-md-5">
+
+<div class="mock-card">
+
+<h5 class="fw-bold text-primary">
+Job Mock Interview (Final Year Students)
+</h5>
+
+<div class="price">₹49</div>
+
+<ul class="features">
+
+<li>✔ Mock interview with placed seniors</li>
+<li>✔ Real interview questions from companies</li>
+<li>✔ Tips & tricks used in real interviews</li>
+<li>✔ Personalized feedback</li>
+<li>✔ Improve interview confidence</li>
+
+</ul>
+
+<p class="small text-muted">
+Connect with seniors who are already placed in companies and learn their interview experience and strategies.
+</p>
+
+<a href="/contact" class="btn btn-primary action-btn">
+Book Mock Interview
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+/* SECTION */
+
+.mock-section{
+padding:70px 0;
+background:#f4f6f9;
+}
+
+/* CARD */
+
+.mock-card{
+background:#fff;
+padding:30px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.mock-card:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* PRICE */
+
+.price{
+font-size:30px;
+font-weight:700;
+margin:10px 0;
+color:#111;
+}
+
+/* FEATURES */
+
+.features{
+list-style:none;
+padding:0;
+margin:15px 0;
+text-align:left;
+}
+
+.features li{
+margin-bottom:8px;
+font-size:14px;
+color:#555;
+}
+
+/* BUTTON */
+
+.action-btn{
+width:100%;
+padding:12px;
+font-weight:600;
+border-radius:8px;
+margin-top:auto;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.mock-card{
+padding:22px;
+}
+
+.price{
+font-size:24px;
+}
+
+}
+
+</style>
+
+` }) %>
