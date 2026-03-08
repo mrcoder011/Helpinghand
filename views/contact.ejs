@@ -4,22 +4,66 @@
 
 body{
 background:#f0f4f8;
+font-family:'Poppins',sans-serif;
+}
+
+.contact-wrapper{
+max-width:1100px;
+margin:auto;
 }
 
 form{
-max-width:850px;
-margin:auto;
-background:#fff;
+background:#ffffff;
 padding:40px;
 border-radius:12px;
 box-shadow:0 8px 30px rgba(0,0,0,0.1);
+}
+
+.payment-box{
+background:#ffffff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 8px 30px rgba(0,0,0,0.1);
+text-align:center;
+position:sticky;
+top:100px;
+}
+
+.payment-box img{
+width:220px;
+margin-top:15px;
+}
+
+.payment-note{
+font-size:13px;
+color:#666;
+}
+
+.payment-box h5{
+margin-bottom:10px;
+}
+
+@media(max-width:768px){
+
+.payment-box{
+margin-top:30px;
+position:relative;
+top:0;
+}
+
 }
 
 </style>
 
 
 
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5 contact-wrapper">
+
+<div class="row g-4">
+
+<!-- LEFT SIDE FORM -->
+
+<div class="col-md-8">
 
 <form action="/contact" method="POST" enctype="multipart/form-data">
 
@@ -48,7 +92,7 @@ Contact Us
 
 
 <label class="form-label">Contact us for (Reason)*</label>
-<textarea class="form-control mb-3" name="skills" required></textarea>
+<textarea class="form-control mb-3" name="skills" rows="3" required></textarea>
 
 
 <div class="row">
@@ -89,14 +133,53 @@ Contact Us
 
 
 <label class="form-label">Upload Resume*</label>
-<input type="file" class="form-control mb-4" name="resume" required>
+<input type="file" class="form-control mb-3" name="resume" required>
 
 
-<button type="submit" class="btn btn-primary w-100 py-2">
+<label class="form-label">Upload Payment Screenshot*</label>
+<input type="file" class="form-control mb-4" name="paymentScreenshot" required>
+
+
+<button type="submit" class="btn btn-primary w-100 py-2 fw-semibold">
 Submit Application
 </button>
 
 </form>
+
+</div>
+
+
+
+<!-- RIGHT SIDE PAYMENT -->
+
+<div class="col-md-4">
+
+<div class="payment-box">
+
+<h5 class="text-primary fw-bold">
+Scan & Pay
+</h5>
+
+<p class="payment-note">
+Please scan the QR code and complete the payment before submitting the form.
+</p>
+
+<img src="/images/upi-qr.jpeg" alt="UPI QR Code">
+
+<p class="mt-3 fw-semibold">
+UPI ID: amupro@upi
+</p>
+
+<p class="payment-note">
+After completing the payment, upload the screenshot in the form.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
 
 </div>
 

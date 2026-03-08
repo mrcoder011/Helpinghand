@@ -1,65 +1,211 @@
-<footer class="footer bg-light pt-5 pb-3 mt-5">
-  <div class="container">
-    <div class="row text-start">
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-      <!-- Logo & Company Links -->
-      <div class="col-md-3 mb-4">
-       <div class="d-flex flex-column lh-sm">
-  <h5 class="mb-0">
-    <i class="fa-solid fa-handshake-angle me-2 text-primary"></i>Amupro
-  </h5>
+<style>
 
-  <small class="text-muted mt-1" style="font-size:12px; letter-spacing:0.3px;">
-    Empowering Students with Real Opportunities
-  </small>
+.footer{
+background:#0f172a;
+color:white;
+}
+
+.footer-desc{
+color:#cbd5e1;
+font-size:14px;
+line-height:1.6;
+}
+
+.footer-title{
+font-weight:600;
+margin-bottom:15px;
+font-size:15px;
+color:white;
+}
+
+.footer-links{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.footer-links li{
+margin-bottom:10px;
+font-size:14px;
+color:#cbd5e1;
+}
+
+.footer-links a{
+text-decoration:none;
+color:#cbd5e1;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+color:#3b82f6;
+padding-left:5px;
+}
+
+.social-icons a{
+width:38px;
+height:38px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#1e293b;
+border-radius:50%;
+color:white;
+font-size:16px;
+transition:0.3s;
+text-decoration:none;
+}
+
+.social-icons a:hover{
+background:#3b82f6;
+transform:translateY(-3px);
+}
+
+.footer-divider{
+border-color:#334155;
+margin-top:30px;
+margin-bottom:20px;
+}
+
+.footer-bottom{
+color:#94a3b8;
+}
+
+.app-download img{
+transition:0.3s;
+}
+
+.app-download img:hover{
+transform:scale(1.05);
+}
+
+</style>
+
+
+<footer class="footer pt-5 pb-3 mt-5">
+
+<div class="container">
+
+<div class="row gy-4">
+
+<!-- Brand Section -->
+
+<div class="col-lg-4 col-md-6">
+
+<h4 class="fw-bold">
+<i class="fa-solid fa-handshake-angle text-primary me-2"></i>
+Amupro
+</h4>
+
+<p class="footer-desc">
+Empowering students with verified internships, jobs and mentorship opportunities to build strong professional careers.
+</p>
+
+<div class="social-icons d-flex gap-3 mt-3">
+
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
 </div>
-        <ul class="list-unstyled">
-          <li><a href="/about">About us</a></li>
-          <li><a href="#">Investor Relations</a></li>
-          <li><a href="/terms">Terms & Conditions</a></li>
-          <li><a href="/privacy">Privacy Policy</a></li>
-          <li><a href="#">Anti-discrimination Policy</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
 
-      <!-- For Customers -->
-      <div class="col-md-3 mb-4">
-        <h6>For Customers</h6>
-        <ul class="list-unstyled">
-          <li><a href="#">Reviews</a></li>
-          <li><a href="#">Categories Near You</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-        </ul>
-      </div>
+</div>
 
-      <!-- For Professionals -->
-      <div class="col-md-3 mb-4">
-        <h6>For Professionals</h6>
-        <ul class="list-unstyled">
-          <li><a href="#">Register as a Professional</a></li>
-        </ul>
-      </div>
 
-      <!-- Social Media & App Links -->
-      <div class="col-md-3 mb-4">
-        <h6>Social Links</h6>
-        <div class="d-flex gap-2 mb-2">
-          <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
-          <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-          <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
-          <a href="#"><i class="fab fa-linkedin fa-lg"></i></a>
-        </div>
-        <div class="d-flex flex-column gap-2">
-          <a href="/soon"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" width="135" alt="Google Play"></a>
-        </div>
-      </div>
-    </div>
+<!-- Company -->
 
-    <!-- Bottom note -->
-    <div class="text-muted small mt-4 border-top pt-3 text-center">
-      * As on June 30, 2026 <br />
-      © 2026 Amupro Pvt. Ltd. | CIN: U12345DL2025PTC123456
-    </div>
-  </div>
+<div class="col-lg-2 col-md-6">
+
+<h6 class="footer-title">Company</h6>
+
+<ul class="footer-links">
+
+<li><a href="/about">About Us</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Investor Relations</a></li>
+<li><a href="#">Press</a></li>
+
+</ul>
+
+</div>
+
+
+<!-- Legal -->
+
+<div class="col-lg-3 col-md-6">
+
+<h6 class="footer-title">Legal</h6>
+
+<ul class="footer-links">
+
+<li><a href="/terms">Terms & Conditions</a></li>
+<li><a href="/privacy">Privacy Policy</a></li>
+<li><a href="#">Anti-discrimination Policy</a></li>
+<li><a href="#">Community Guidelines</a></li>
+
+</ul>
+
+</div>
+
+
+<!-- Contact -->
+
+<div class="col-lg-3 col-md-6">
+
+<h6 class="footer-title">Contact</h6>
+
+<ul class="footer-links">
+
+<li>
+<i class="fa-solid fa-envelope me-2"></i>
+info@amupro.com
+</li>
+
+<li>
+<i class="fa-solid fa-phone me-2"></i>
++91 XXXXX XXXXX
+</li>
+
+<li>
+<i class="fa-solid fa-location-dot me-2"></i>
+New Delhi, India
+</li>
+
+</ul>
+
+<div class="app-download mt-3">
+
+<a href="/soon">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+width="140"
+alt="Google Play">
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<hr class="footer-divider">
+
+
+<div class="d-md-flex justify-content-between text-center text-md-start small footer-bottom">
+
+<div>
+© 2026 <strong>Amupro Pvt. Ltd.</strong> All rights reserved.
+</div>
+
+<div>
+CIN: U12345DL2025PTC123456
+</div>
+
+</div>
+
+</div>
+
 </footer>

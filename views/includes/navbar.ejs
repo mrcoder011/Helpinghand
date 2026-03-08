@@ -1,232 +1,411 @@
 <!-- ================= GOOGLE FONT ================= -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 <style>
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
+
+body{
+font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+background:#f5f7fb;
 }
+
 
 /* ================= NAVBAR ================= */
 
-.navbar {
-  z-index: 1050;
-  background: #ffffff;
+.navbar{
+background:#ffffff;
+z-index:1050;
 }
 
-.nav-hover:hover {
-  background-color: rgba(13,110,253,0.08);
-  transition: 0.3s ease;
-  border-radius: 8px;
+.nav-hover{
+transition:0.3s;
+border-radius:8px;
 }
 
-.navbar-toggler {
-  border-radius: 10px;
-  padding: 6px 10px;
-  background: #f8f9fa;
-  border: none;
+.nav-hover:hover{
+background:rgba(13,110,253,0.08);
 }
 
-.navbar-toggler:focus {
-  box-shadow: none;
+.navbar-toggler{
+border-radius:10px;
+padding:6px 10px;
+background:#f8f9fa;
+border:none;
 }
 
-/* MOBILE DROPDOWN FIX */
-@media (max-width: 767px) {
+.navbar-toggler:focus{
+box-shadow:none;
+}
 
-  .navbar-collapse {
-    background: #ffffff;
-    padding: 20px;
-    margin-top: 12px;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    animation: dropdownFade 0.3s ease;
-  }
 
-  .navbar-nav {
-    gap: 15px !important;
-  }
+/* MOBILE NAVBAR */
 
-  .navbar-nav .nav-item {
-    width: 100%;
-  }
+@media(max-width:767px){
 
-  .navbar-nav .nav-link {
-    padding: 10px 15px;
-    border-radius: 8px;
-  }
+.navbar-collapse{
+background:#ffffff;
+padding:20px;
+margin-top:12px;
+border-radius:15px;
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+animation:dropdownFade 0.3s ease;
+}
+
+.navbar-nav{
+gap:15px !important;
+}
+
+.navbar-nav .nav-item{
+width:100%;
+}
+
+.navbar-nav .nav-link{
+padding:10px 15px;
+border-radius:8px;
+}
 
 }
 
-@keyframes dropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes dropdownFade{
+from{
+opacity:0;
+transform:translateY(-10px);
 }
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
 
 /* ================= HERO ================= */
 
-.hero {
-  position: relative;
-  padding: 140px 0;
-  color: #fff;
-  background: linear-gradient(-45deg, #0d6efd, #6610f2, #0dcaf0, #20c997);
-  background-size: 400% 400%;
-  animation: gradientMove 12s ease infinite;
+.hero{
+position:relative;
+padding:150px 0;
+color:#fff;
+
+background:linear-gradient(-45deg,#0d6efd,#6610f2,#0dcaf0,#20c997);
+background-size:400% 400%;
+animation:gradientMove 12s ease infinite;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-.hero-overlay {
-  background: rgba(0,0,0,0.55);
-  padding: 60px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+/* HERO OVERLAY */
+
+.hero-overlay{
+
+background:rgba(0,0,0,0.55);
+padding:60px;
+border-radius:20px;
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 20px 60px rgba(0,0,0,0.35);
+
 }
 
-/* Buttons */
 
-.btn-premium {
-  background: #ffffff;
-  color: #0d6efd;
-  font-weight: 600;
-  border-radius: 40px;
-  padding: 12px 30px;
-  transition: 0.3s;
-  border: none;
+/* HERO TEXT */
+
+.hero h1{
+font-weight:700;
 }
 
-.btn-premium:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+.hero p{
+opacity:0.9;
 }
 
-.btn-outline-premium {
-  border: 2px solid #fff;
-  color: #fff;
-  border-radius: 40px;
-  padding: 12px 30px;
-  font-weight: 600;
-  transition: 0.3s;
+
+/* BUTTONS */
+
+.btn-premium{
+
+background:#ffffff;
+color:#0d6efd;
+font-weight:600;
+
+border-radius:40px;
+padding:12px 30px;
+
+transition:0.3s;
+border:none;
+
 }
 
-.btn-outline-premium:hover {
-  background: #fff;
-  color: #0d6efd;
-  transform: translateY(-3px);
+.btn-premium:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 25px rgba(0,0,0,0.3);
+
 }
 
-@media (max-width: 768px) {
-  .hero-overlay {
-    padding: 30px;
-  }
+.btn-outline-premium{
+
+border:2px solid #fff;
+color:#fff;
+
+border-radius:40px;
+padding:12px 30px;
+
+font-weight:600;
+
+transition:0.3s;
+
 }
+
+.btn-outline-premium:hover{
+
+background:#fff;
+color:#0d6efd;
+
+transform:translateY(-3px);
+
+}
+
+
+
+/* ================= SCROLL INDICATOR ================= */
+
+.scroll-indicator{
+
+font-size:14px;
+opacity:0.9;
+
+}
+
+.mouse{
+
+width:25px;
+height:40px;
+
+border:2px solid #fff;
+
+border-radius:20px;
+
+margin:10px auto;
+
+position:relative;
+
+}
+
+.wheel{
+
+width:4px;
+height:8px;
+
+background:#fff;
+
+border-radius:4px;
+
+position:absolute;
+
+top:6px;
+left:50%;
+
+transform:translateX(-50%);
+
+animation:scroll 1.5s infinite;
+
+}
+
+@keyframes scroll{
+
+0%{opacity:0; top:6px;}
+
+50%{opacity:1;}
+
+100%{opacity:0; top:20px;}
+
+}
+
+
+
+/* MOBILE HERO */
+
+@media(max-width:768px){
+
+.hero{
+padding:100px 0;
+}
+
+.hero-overlay{
+padding:30px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+}
+
 </style>
 
 
+
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top border-bottom py-3">
-  <div class="container d-flex align-items-center">
 
-    <!-- BRAND -->
-    <a class="navbar-brand fw-bold text-primary d-flex flex-column align-items-start me-auto" href="/">
-      
-      <div class="d-flex align-items-center">
-        <i class="fa-solid fa-handshake-angle me-2 fs-4"></i>
-        <span class="fs-5">Amupro</span>
-      </div>
+<nav class="navbar navbar-expand-md shadow-sm sticky-top border-bottom py-3">
 
-      <small class="text-muted" style="font-size:11px;">
-        Empowering Students with Real Opportunities
-      </small>
+<div class="container d-flex align-items-center">
 
-    </a>
 
-    <!-- TOGGLE BUTTON -->
-    <button class="navbar-toggler border-0 shadow-none" type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
+<!-- BRAND -->
 
-      <span class="navbar-toggler-icon"></span>
+<a class="navbar-brand fw-bold text-primary d-flex flex-column align-items-start me-auto" href="/">
 
-    </button>
+<div class="d-flex align-items-center">
 
-    <!-- NAV LINKS -->
-    <div class="collapse navbar-collapse justify-content-end mt-3 mt-md-0" id="navbarNav">
+<i class="fa-solid fa-handshake-angle me-2 fs-4"></i>
 
-      <ul class="navbar-nav ms-auto gap-md-3 align-items-md-center">
+<span class="fs-5">Amupro</span>
 
-        <li class="nav-item">
-          <a class="nav-link fw-semibold nav-hover active" href="/">Home</a>
-        </li>
+</div>
 
-        <li class="nav-item">
-          <a class="nav-link fw-semibold nav-hover" href="/about">About</a>
-        </li>
+<small class="text-muted" style="font-size:11px;">
+Empowering Students with Real Opportunities
+</small>
 
-        <li class="nav-item">
-          <a class="nav-link fw-semibold nav-hover" href="/contact">Contact us!</a>
-        </li>
+</a>
 
-        <!-- NOTIFICATION -->
-        <li class="nav-item position-relative">
-          <a class="nav-link d-flex align-items-center" href="#">
-            <i class="fa-solid fa-bell fs-5"></i>
 
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              99+
-            </span>
-          </a>
-        </li>
 
-      </ul>
+<!-- TOGGLE -->
 
-    </div>
+<button class="navbar-toggler"
 
-  </div>
+type="button"
+
+data-bs-toggle="collapse"
+
+data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+
+
+<!-- NAV LINKS -->
+
+<div class="collapse navbar-collapse justify-content-end mt-3 mt-md-0" id="navbarNav">
+
+<ul class="navbar-nav ms-auto gap-md-3 align-items-md-center">
+
+<li class="nav-item">
+
+<a class="nav-link fw-semibold nav-hover active" href="/">
+Home
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link fw-semibold nav-hover" href="/about">
+About
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link fw-semibold nav-hover" href="/contact">
+Contact
+</a>
+
+</li>
+
+
+<!-- NOTIFICATION -->
+
+<li class="nav-item position-relative">
+
+<a class="nav-link d-flex align-items-center" href="#">
+
+<i class="fa-solid fa-bell fs-5"></i>
+
+<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+99+
+</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
 </nav>
 
+
+
 <!-- ================= HERO ================= 
-<section class="hero text-center position-relative">
-  <div class="container">
-    <div class="hero-overlay">
 
-      <h1 class="display-4 fw-bold mb-4">
-        Find Your Next Opportunity
-      </h1>
+<section class="hero text-center">
 
-      <p class="lead mb-4">
-        Discover internships, competitions, mentorships and more to boost your career and skills.
-      </p>
+<div class="container">
 
-      <div class="d-flex justify-content-center gap-4 flex-wrap">
-        <a href="#" class="btn btn-premium">
-          Browse Opportunities
-        </a>
-      </div>
+<div class="hero-overlay">
 
-      <!-- 👇 Scroll Hint 
-      <div class="scroll-indicator mt-5">
-        <span>Explore Career Opportunities</span>
-        <div class="mouse">
-          <div class="wheel"></div>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</section> -->
+<h1 class="display-4 mb-4">
+Find Your Next Opportunity
+</h1>
+
+<p class="lead mb-4">
+
+Discover internships, competitions, mentorships and more
+to boost your career and skills.
+
+</p>
+
+
+<div class="d-flex justify-content-center gap-4 flex-wrap">
+
+<a href="#" class="btn btn-premium">
+Browse Opportunities
+</a>
+
+<a href="#" class="btn btn-outline-premium">
+Post Opportunity
+</a>
+
+</div>
+
+
+
+<div class="scroll-indicator mt-5">
+
+<span>Explore Career Opportunities</span>
+
+<div class="mouse">
+
+<div class="wheel"></div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>-->
