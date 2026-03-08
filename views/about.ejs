@@ -35,17 +35,39 @@ transform:translateY(-8px);
 box-shadow:0 20px 60px rgba(0,0,0,0.1);
 }
 
+/* TEAM IMAGE */
+
 .team-icon{
-width:75px;
-height:75px;
+width:110px;
+height:110px;
 border-radius:50%;
+overflow:hidden;
+margin:0 auto 18px auto;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+background:#f8f9fa;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.team-icon img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:50% 5%;
+}
+/* Icon fallback */
+
+.team-icon i{
+font-size:30px;
+color:#fff;
+}
+
+.icon-bg{
 background:linear-gradient(135deg,#0d6efd,#6610f2);
 display:flex;
 align-items:center;
 justify-content:center;
-color:#fff;
-font-size:30px;
-margin:0 auto 18px auto;
 }
 
 .team-card h6{
@@ -123,7 +145,7 @@ providing verified opportunities, mentorship, and career support.
 <div class="team-card">
 
 <div class="team-icon">
-<i class="fa-solid fa-user-tie"></i>
+<img src="/images/Founder.jpeg" alt="Founder">
 </div>
 
 <h6>FOUNDER</h6>
@@ -160,7 +182,7 @@ LinkedIn Profile
 <div class="team-card">
 
 <div class="team-icon">
-<i class="fa-solid fa-user-gear"></i>
+<img src="/images/Safi.png" alt="Co-Founder Safiullah">
 </div>
 
 <h6>CO-FOUNDER</h6>
@@ -188,14 +210,13 @@ LinkedIn Profile
 </div>
 
 
-
 <!-- CO FOUNDER -->
 
 <div class="col-md-4">
 
 <div class="team-card">
 
-<div class="team-icon">
+<div class="team-icon icon-bg">
 <i class="fa-solid fa-user"></i>
 </div>
 
