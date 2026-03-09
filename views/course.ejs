@@ -10,42 +10,32 @@
 </div>
 
 
-
 <div class="courses-wrapper">
-
 
 <!-- SOLIDWORKS -->
 
-<div class="course-card popular-course">
+<div class="course-card popular">
 
 <div class="popular-badge">Most Popular</div>
 
-<img src="/images/solidworks.jpg" class="course-img">
+<img src="https://img.icons8.com/color/512/solidworks.png" class="course-img">
 
 <div class="course-body">
 
 <h3>SOLIDWORKS</h3>
 
-<div class="rating">
-★★★★★ <span>(4.8)</span>
-</div>
+<div class="rating">★★★★★ <span>(4.8)</span></div>
 
-<p>
-Learn 3D CAD modeling, product design, assemblies and engineering drawings used in mechanical industries.
-</p>
+<p>Learn 3D CAD modeling, assemblies and engineering drawings used in industries.</p>
 
 <div class="course-info">
-
 <span>⏱ 6 Weeks</span>
 <span>🎯 Beginner–Intermediate</span>
-
 </div>
 
 <div class="course-meta">
-
-<span class="students">👨‍🎓 850+ Students</span>
+<span>👨‍🎓 5+ Students</span>
 <span class="price">₹199</span>
-
 </div>
 
 <a href="/contact" class="course-btn">Enroll Now</a>
@@ -56,36 +46,28 @@ Learn 3D CAD modeling, product design, assemblies and engineering drawings used 
 
 
 
-<!-- WEB DEV -->
+<!-- WEB DEVELOPMENT -->
 
 <div class="course-card">
 
-<img src="/images/web.jpg" class="course-img">
+<img src="https://img.icons8.com/color/512/source-code.png" class="course-img">
 
 <div class="course-body">
 
 <h3>Web Development</h3>
 
-<div class="rating">
-★★★★★ <span>(4.9)</span>
-</div>
+<div class="rating">★★★★★ <span>(4.9)</span></div>
 
-<p>
-Learn HTML, CSS, JavaScript, Node.js and build modern responsive websites.
-</p>
+<p>Learn HTML, CSS, JavaScript, Node.js and build modern responsive websites.</p>
 
 <div class="course-info">
-
 <span>⏱ 8 Weeks</span>
 <span>🎯 Beginner</span>
-
 </div>
 
 <div class="course-meta">
-
-<span class="students">👨‍🎓 1200+ Students</span>
+<span>👨‍🎓 12+ Students</span>
 <span class="price">₹199</span>
-
 </div>
 
 <a href="/contact" class="course-btn">Enroll Now</a>
@@ -100,32 +82,24 @@ Learn HTML, CSS, JavaScript, Node.js and build modern responsive websites.
 
 <div class="course-card">
 
-<img src="/images/ansys.jpg" class="course-img">
+<img src="https://img.icons8.com/color/512/engineering.png" class="course-img">
 
 <div class="course-body">
 
 <h3>ANSYS Simulation</h3>
 
-<div class="rating">
-★★★★☆ <span>(4.6)</span>
-</div>
+<div class="rating">★★★★☆ <span>(4.6)</span></div>
 
-<p>
-Learn CFD, structural and thermal simulations used in engineering industries.
-</p>
+<p>Learn CFD, structural and thermal simulations used in engineering industries.</p>
 
 <div class="course-info">
-
 <span>⏱ 6 Weeks</span>
 <span>🎯 Intermediate</span>
-
 </div>
 
 <div class="course-meta">
-
-<span class="students">👨‍🎓 600+ Students</span>
+<span>👨‍🎓 6+ Students</span>
 <span class="price">₹199</span>
-
 </div>
 
 <a href="/contact" class="course-btn">Enroll Now</a>
@@ -140,32 +114,24 @@ Learn CFD, structural and thermal simulations used in engineering industries.
 
 <div class="course-card">
 
-<img src="/images/autocad.jpg" class="course-img">
+<img src="https://img.icons8.com/color/512/autodesk.png" class="course-img">
 
 <div class="course-body">
 
 <h3>AUTOCAD</h3>
 
-<div class="rating">
-★★★★☆ <span>(4.5)</span>
-</div>
+<div class="rating">★★★★☆ <span>(4.5)</span></div>
 
-<p>
-Master professional 2D drafting and engineering drawing workflows.
-</p>
+<p>Learn professional 2D drafting and engineering design workflows.</p>
 
 <div class="course-info">
-
 <span>⏱ 4 Weeks</span>
 <span>🎯 Beginner</span>
-
 </div>
 
 <div class="course-meta">
-
-<span class="students">👨‍🎓 10+ Students</span>
+<span>👨‍🎓 7+ Students</span>
 <span class="price">₹199</span>
-
 </div>
 
 <a href="/contact" class="course-btn">Enroll Now</a>
@@ -193,12 +159,7 @@ background:#f4f6f9;
 .container{
 max-width:1200px;
 margin:auto;
-padding:0 15px;
 }
-
-
-
-/* HEADING */
 
 .heading{
 text-align:center;
@@ -208,14 +169,11 @@ margin-bottom:50px;
 .heading h2{
 font-size:32px;
 font-weight:700;
-margin-bottom:10px;
 }
 
 .heading p{
 color:#666;
-font-size:15px;
 }
-
 
 
 /* GRID */
@@ -227,7 +185,6 @@ gap:25px;
 }
 
 
-
 /* CARD */
 
 .course-card{
@@ -235,9 +192,9 @@ background:#fff;
 border-radius:14px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 overflow:hidden;
+transition:.3s;
 display:flex;
 flex-direction:column;
-transition:.3s;
 position:relative;
 }
 
@@ -247,15 +204,15 @@ box-shadow:0 25px 60px rgba(0,0,0,0.15);
 }
 
 
-
 /* IMAGE */
 
 .course-img{
 width:100%;
-height:170px;
-object-fit:cover;
+height:150px;
+object-fit:contain;
+background:#f8f9fa;
+padding:20px;
 }
-
 
 
 /* BODY */
@@ -264,77 +221,41 @@ object-fit:cover;
 padding:20px;
 display:flex;
 flex-direction:column;
-flex:1;
+gap:10px;
 }
 
 
-
-/* TITLE */
-
 .course-body h3{
 font-size:20px;
-margin-bottom:8px;
 font-weight:700;
 }
 
 
-
-/* RATING */
-
 .rating{
 color:#f59e0b;
 font-size:14px;
-margin-bottom:10px;
 }
 
-.rating span{
-color:#555;
-}
-
-
-
-/* DESCRIPTION */
-
-.course-body p{
-font-size:14px;
-color:#555;
-margin-bottom:15px;
-}
-
-
-
-/* INFO */
 
 .course-info{
 display:flex;
 justify-content:space-between;
 font-size:13px;
 color:#666;
-margin-bottom:12px;
 }
 
-
-
-/* META */
 
 .course-meta{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:15px;
 }
 
-.students{
-font-size:13px;
-color:#666;
-}
 
 .price{
-font-size:18px;
 font-weight:700;
 color:#0d6efd;
 }
-
 
 
 /* BUTTON */
@@ -343,11 +264,11 @@ color:#0d6efd;
 background:#0d6efd;
 color:#fff;
 text-decoration:none;
-padding:11px;
+padding:10px;
 border-radius:8px;
 text-align:center;
 font-weight:600;
-transition:.3s;
+margin-top:10px;
 }
 
 .course-btn:hover{
@@ -355,8 +276,7 @@ background:#0b5ed7;
 }
 
 
-
-/* POPULAR BADGE */
+/* POPULAR */
 
 .popular-badge{
 position:absolute;
@@ -370,69 +290,14 @@ border-radius:6px;
 }
 
 
-
-/* TABLET */
-
-@media(max-width:900px){
-
-.heading h2{
-font-size:28px;
-}
-
-.courses-wrapper{
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-}
-
-}
-
-
-
-/* MOBILE */
-
 @media(max-width:600px){
-
-.courses-section{
-padding:50px 10px;
-}
 
 .heading h2{
 font-size:24px;
 }
 
-.heading p{
-font-size:14px;
-}
-
 .course-img{
-height:160px;
-}
-
-.course-body{
-padding:18px;
-}
-
-.course-body h3{
-font-size:18px;
-}
-
-.course-body p{
-font-size:13px;
-}
-
-.course-info{
-flex-direction:column;
-gap:4px;
-}
-
-.course-meta{
-flex-direction:column;
-align-items:flex-start;
-gap:5px;
-}
-
-.course-btn{
-width:100%;
-margin-top:8px;
+height:130px;
 }
 
 }
