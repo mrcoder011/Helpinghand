@@ -1,1 +1,301 @@
+<%- include("./layouts/boilerplate", { body: `
 
+<section class="courses-section">
+
+<div class="container">
+
+<!-- HEADING -->
+
+<div class="heading text-center">
+
+<h2>Professional Career Courses</h2>
+
+<p>Learn industry demanded skills and boost your career with practical training.</p>
+
+</div>
+
+
+
+<!-- COURSE CARDS -->
+
+<div class="courses-wrapper">
+
+
+<!-- SOLIDWORKS -->
+
+<div class="course-card">
+
+<div class="course-icon">
+<i class="fa-solid fa-cube"></i>
+</div>
+
+<h3>SOLIDWORKS</h3>
+
+<p>
+Learn 3D CAD modeling, product design, assemblies and engineering drawings
+used in mechanical design industries.
+</p>
+
+<div class="course-info">
+
+<span>⏱ Duration: 6 Weeks</span>
+<span>🎯 Level: Beginner to Intermediate</span>
+
+</div>
+
+<a href="/contact" class="course-btn">
+Enroll Now
+</a>
+
+</div>
+
+
+
+<!-- WEB DEVELOPMENT -->
+
+<div class="course-card">
+
+<div class="course-icon web">
+<i class="fa-solid fa-code"></i>
+</div>
+
+<h3>Web Development</h3>
+
+<p>
+Build modern websites using HTML, CSS, JavaScript, Node.js and learn
+full stack development skills.
+</p>
+
+<div class="course-info">
+
+<span>⏱ Duration: 8 Weeks</span>
+<span>🎯 Level: Beginner</span>
+
+</div>
+
+<a href="/contact" class="course-btn">
+Enroll Now
+</a>
+
+</div>
+
+
+
+<!-- ANSYS -->
+
+<div class="course-card">
+
+<div class="course-icon ansys">
+<i class="fa-solid fa-gears"></i>
+</div>
+
+<h3>ANSYS Simulation</h3>
+
+<p>
+Master engineering simulations including CFD, structural analysis
+and thermal simulations used in industries.
+</p>
+
+<div class="course-info">
+
+<span>⏱ Duration: 6 Weeks</span>
+<span>🎯 Level: Intermediate</span>
+
+</div>
+
+<a href="/contact" class="course-btn">
+Enroll Now
+</a>
+
+</div>
+
+
+
+<!-- AUTOCAD -->
+
+<div class="course-card">
+
+<div class="course-icon cad">
+<i class="fa-solid fa-compass-drafting"></i>
+</div>
+
+<h3>AUTOCAD</h3>
+
+<p>
+Learn professional 2D drafting, technical drawings and engineering
+design workflows used in construction and manufacturing.
+</p>
+
+<div class="course-info">
+
+<span>⏱ Duration: 4 Weeks</span>
+<span>🎯 Level: Beginner</span>
+
+</div>
+
+<a href="/contact" class="course-btn">
+Enroll Now
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<style>
+
+.courses-section{
+padding:70px 20px;
+background:#f4f6f9;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+}
+
+.heading{
+margin-bottom:50px;
+}
+
+.heading h2{
+font-size:32px;
+font-weight:700;
+}
+
+.heading p{
+color:#666;
+}
+
+
+
+/* COURSES GRID */
+
+.courses-wrapper{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+
+
+/* CARD */
+
+.course-card{
+background:#fff;
+padding:25px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-align:center;
+transition:0.3s;
+display:flex;
+flex-direction:column;
+}
+
+.course-card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 60px rgba(0,0,0,0.15);
+}
+
+
+
+/* ICON */
+
+.course-icon{
+width:70px;
+height:70px;
+margin:auto;
+border-radius:50%;
+background:#0d6efd;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+margin-bottom:15px;
+}
+
+.web{
+background:#ff6b00;
+}
+
+.ansys{
+background:#16a34a;
+}
+
+.cad{
+background:#6f42c1;
+}
+
+
+
+/* TEXT */
+
+.course-card h3{
+font-size:20px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.course-card p{
+font-size:14px;
+color:#555;
+margin-bottom:15px;
+}
+
+
+
+/* COURSE INFO */
+
+.course-info{
+display:flex;
+flex-direction:column;
+gap:4px;
+font-size:13px;
+color:#666;
+margin-bottom:18px;
+}
+
+
+
+/* BUTTON */
+
+.course-btn{
+background:#0d6efd;
+color:#fff;
+text-decoration:none;
+padding:12px;
+border-radius:8px;
+font-weight:600;
+transition:0.3s;
+}
+
+.course-btn:hover{
+background:#0b5ed7;
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.heading h2{
+font-size:26px;
+}
+
+.course-card{
+padding:22px;
+}
+
+}
+
+</style>
+
+` }) %>
