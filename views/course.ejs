@@ -4,17 +4,22 @@
 
 <div class="container">
 
-<div class="heading">
+<div class="heading text-center">
+
 <h2>Professional Career Courses</h2>
+
 <p>Learn industry demanded skills and boost your career with practical training.</p>
+
 </div>
+
 
 
 <div class="courses-wrapper">
 
+
 <!-- SOLIDWORKS -->
 
-<div class="course-card popular">
+<div class="course-card">
 
 <div class="popular-badge">Most Popular</div>
 
@@ -26,19 +31,29 @@
 
 <div class="rating">★★★★★ <span>(4.8)</span></div>
 
-<p>Learn 3D CAD modeling, assemblies and engineering drawings used in industries.</p>
+<p>
+Learn 3D CAD modeling, product design, assemblies and engineering drawings used in mechanical industries.
+</p>
 
 <div class="course-info">
+
 <span>⏱ 6 Weeks</span>
+
 <span>🎯 Beginner–Intermediate</span>
+
 </div>
 
 <div class="course-meta">
-<span>👨‍🎓 5+ Students</span>
+
+<span class="students">👨‍🎓 8+ Students</span>
+
 <span class="price">₹199</span>
+
 </div>
 
-<a href="/contact" class="course-btn">Enroll Now</a>
+<a href="/contact" class="course-btn">
+Enroll Now
+</a>
 
 </div>
 
@@ -58,19 +73,29 @@
 
 <div class="rating">★★★★★ <span>(4.9)</span></div>
 
-<p>Learn HTML, CSS, JavaScript, Node.js and build modern responsive websites.</p>
+<p>
+Learn HTML, CSS, JavaScript, Node.js and build modern responsive websites.
+</p>
 
 <div class="course-info">
+
 <span>⏱ 8 Weeks</span>
+
 <span>🎯 Beginner</span>
+
 </div>
 
 <div class="course-meta">
-<span>👨‍🎓 12+ Students</span>
+
+<span class="students">👨‍🎓 12+ Students</span>
+
 <span class="price">₹199</span>
+
 </div>
 
-<a href="/contact" class="course-btn">Enroll Now</a>
+<a href="/contact" class="course-btn">
+Enroll Now
+</a>
 
 </div>
 
@@ -90,19 +115,29 @@
 
 <div class="rating">★★★★☆ <span>(4.6)</span></div>
 
-<p>Learn CFD, structural and thermal simulations used in engineering industries.</p>
+<p>
+Learn CFD, structural and thermal simulations used in engineering industries.
+</p>
 
 <div class="course-info">
+
 <span>⏱ 6 Weeks</span>
+
 <span>🎯 Intermediate</span>
+
 </div>
 
 <div class="course-meta">
-<span>👨‍🎓 6+ Students</span>
+
+<span class="students">👨‍🎓 6+ Students</span>
+
 <span class="price">₹199</span>
+
 </div>
 
-<a href="/contact" class="course-btn">Enroll Now</a>
+<a href="/contact" class="course-btn">
+Enroll Now
+</a>
 
 </div>
 
@@ -122,19 +157,29 @@
 
 <div class="rating">★★★★☆ <span>(4.5)</span></div>
 
-<p>Learn professional 2D drafting and engineering design workflows.</p>
+<p>
+Learn professional 2D drafting and engineering design workflows.
+</p>
 
 <div class="course-info">
+
 <span>⏱ 4 Weeks</span>
+
 <span>🎯 Beginner</span>
+
 </div>
 
 <div class="course-meta">
-<span>👨‍🎓 7+ Students</span>
+
+<span class="students">👨‍🎓 7+ Students</span>
+
 <span class="price">₹199</span>
+
 </div>
 
-<a href="/contact" class="course-btn">Enroll Now</a>
+<a href="/contact" class="course-btn">
+Enroll Now
+</a>
 
 </div>
 
@@ -159,10 +204,14 @@ background:#f4f6f9;
 .container{
 max-width:1200px;
 margin:auto;
+padding:0 15px;
 }
 
+
+
+/* HEADING */
+
 .heading{
-text-align:center;
 margin-bottom:50px;
 }
 
@@ -173,16 +222,19 @@ font-weight:700;
 
 .heading p{
 color:#666;
+font-size:15px;
 }
+
 
 
 /* GRID */
 
 .courses-wrapper{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
+
 
 
 /* CARD */
@@ -204,15 +256,17 @@ box-shadow:0 25px 60px rgba(0,0,0,0.15);
 }
 
 
+
 /* IMAGE */
 
 .course-img{
 width:100%;
-height:150px;
+height:160px;
 object-fit:contain;
 background:#f8f9fa;
 padding:20px;
 }
+
 
 
 /* BODY */
@@ -225,10 +279,12 @@ gap:10px;
 }
 
 
+
 .course-body h3{
 font-size:20px;
 font-weight:700;
 }
+
 
 
 .rating{
@@ -236,6 +292,16 @@ color:#f59e0b;
 font-size:14px;
 }
 
+
+
+.course-body p{
+font-size:14px;
+color:#555;
+}
+
+
+
+/* INFO */
 
 .course-info{
 display:flex;
@@ -245,17 +311,22 @@ color:#666;
 }
 
 
+
+/* META */
+
 .course-meta{
 display:flex;
 justify-content:space-between;
 align-items:center;
+margin-top:5px;
 }
 
-
 .price{
+font-size:18px;
 font-weight:700;
 color:#0d6efd;
 }
+
 
 
 /* BUTTON */
@@ -264,7 +335,7 @@ color:#0d6efd;
 background:#0d6efd;
 color:#fff;
 text-decoration:none;
-padding:10px;
+padding:12px;
 border-radius:8px;
 text-align:center;
 font-weight:600;
@@ -276,7 +347,8 @@ background:#0b5ed7;
 }
 
 
-/* POPULAR */
+
+/* BADGE */
 
 .popular-badge{
 position:absolute;
@@ -290,14 +362,68 @@ border-radius:6px;
 }
 
 
-@media(max-width:600px){
+
+/* TABLET */
+
+@media(max-width:900px){
 
 .heading h2{
-font-size:24px;
+font-size:26px;
+}
+
+.courses-wrapper{
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.courses-section{
+padding:50px 10px;
+}
+
+.heading h2{
+font-size:22px;
+}
+
+.heading p{
+font-size:14px;
 }
 
 .course-img{
-height:130px;
+height:140px;
+}
+
+.course-body{
+padding:18px;
+}
+
+.course-body h3{
+font-size:18px;
+}
+
+.course-body p{
+font-size:13px;
+}
+
+.course-info{
+flex-direction:column;
+gap:4px;
+}
+
+.course-meta{
+flex-direction:column;
+align-items:flex-start;
+gap:4px;
+}
+
+.course-btn{
+width:100%;
 }
 
 }
