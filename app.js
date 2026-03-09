@@ -63,6 +63,9 @@ app.get("/jintern", (req, res) => {
 app.get("/core", (req, res) => {
   res.render("core");
 });
+app.get("/course", (req, res) => {
+  res.render("course");
+});
 
 app.get("/mentor", (req, res) => {
   res.render("mentor");
