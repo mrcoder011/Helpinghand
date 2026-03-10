@@ -11,7 +11,8 @@
 <h2>Core Engineering Job Access Plans</h2>
 
 <p>
-Join our WhatsApp groups to receive verified Core Engineering placement opportunities.
+Get verified core engineering opportunities directly on WhatsApp.
+Choose the plan that fits your career journey.
 </p>
 
 </div>
@@ -24,26 +25,27 @@ Join our WhatsApp groups to receive verified Core Engineering placement opportun
 
 <!-- BASIC PLAN -->
 
-<div class="plan-card basic">
+<div class="plan-card">
 
-<div class="badge">Basic Access</div>
+<div class="badge basic-badge">Basic Access</div>
 
 <h3 class="plan-title">Basic Core Subscription</h3>
 
-<div class="price">₹49</div>
-
 <ul class="features">
 
-<li>✔ Access to core engineering opportunities</li>
-<li>✔ Mechanical / Electrical / Civil / Chemical roles</li>
-<li>✔ Entry level core jobs</li>
-<li>✔ Regular job alerts</li>
-<li>✔ WhatsApp group access</li>
+<li>✔ Core engineering job updates</li>
+<li>✔ Mechanical / Electrical / Civil roles</li>
+<li>✔ Entry-level hiring alerts</li>
+<li>✔ Regular WhatsApp job notifications</li>
+<li>✔ Community WhatsApp group</li>
 
 </ul>
 
-<a href="/contact" class="join-btn">
-Join Core Basic WhatsApp Group
+<a href="/contact" class="join-btn whatsapp-btn">
+
+<i class="fab fa-whatsapp"></i>
+Join Basic Group
+
 </a>
 
 </div>
@@ -56,25 +58,26 @@ Join Core Basic WhatsApp Group
 
 <div class="popular">⭐ Most Popular</div>
 
-<div class="badge premium">Premium Access</div>
+<div class="badge premium-badge">Premium Access</div>
 
 <h3 class="plan-title">Prime Core Subscription</h3>
 
-<div class="price">₹99</div>
-
 <ul class="features">
 
-<li>✔ Premium core engineering opportunities</li>
-<li>✔ PSU & Government hiring alerts</li>
+<li>✔ Premium core engineering jobs</li>
+<li>✔ PSU / Government hiring alerts</li>
 <li>✔ Core MNC engineering roles</li>
-<li>✔ Automobile / Power / Oil & Gas sector roles</li>
-<li>✔ Early access to hiring drives</li>
+<li>✔ Automobile / Power / Oil & Gas sector</li>
+<li>✔ Early hiring drive access</li>
 <li>✔ Premium WhatsApp group updates</li>
 
 </ul>
 
 <a href="/contact" class="join-btn prime-btn">
-Join Core Prime WhatsApp Group
+
+<i class="fab fa-whatsapp"></i>
+Join Prime Group
+
 </a>
 
 </div>
@@ -88,6 +91,8 @@ Join Core Prime WhatsApp Group
 <div class="comparison">
 
 <h3>Plan Comparison</h3>
+
+<div class="table-wrapper">
 
 <table>
 
@@ -131,6 +136,8 @@ Join Core Prime WhatsApp Group
 
 </div>
 
+</div>
+
 
 </div>
 
@@ -140,15 +147,23 @@ Join Core Prime WhatsApp Group
 
 <style>
 
+/* SECTION */
+
 .plans-section{
 background:#f4f6f9;
 padding:70px 20px;
+font-family:Poppins;
 }
 
 .container{
 max-width:1100px;
 margin:auto;
+padding:0 20px;
 }
+
+
+
+/* HEADING */
 
 .heading{
 margin-bottom:50px;
@@ -157,20 +172,23 @@ margin-bottom:50px;
 .heading h2{
 font-size:30px;
 font-weight:700;
+margin-bottom:10px;
 }
 
 .heading p{
 color:#666;
+font-size:15px;
 }
 
 
 
+/* PLAN GRID */
+
 .plans-wrapper{
-display:flex;
+display:grid;
+grid-template-columns:1fr 1fr;
 gap:30px;
-flex-wrap:wrap;
-justify-content:center;
-margin-bottom:50px;
+margin-bottom:60px;
 }
 
 
@@ -179,10 +197,8 @@ margin-bottom:50px;
 
 .plan-card{
 background:#fff;
-flex:1 1 350px;
-max-width:420px;
 padding:30px;
-border-radius:16px;
+border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 transition:0.3s;
 display:flex;
@@ -192,39 +208,53 @@ position:relative;
 
 .plan-card:hover{
 transform:translateY(-8px);
-box-shadow:0 25px 60px rgba(0,0,0,0.15);
+box-shadow:0 20px 60px rgba(0,0,0,0.12);
 }
 
 
 
-/* PRIME HIGHLIGHT */
+/* PRIME PLAN */
 
 .prime{
-border:2px solid #ff6b00;
-transform:scale(1.05);
+background:linear-gradient(135deg,#ff6b00,#ff9d2f);
+color:white;
+}
+
+.prime .features li{
+color:white;
+}
+
+.prime-btn{
+background:white;
+color:#ff6b00;
 }
 
 
 
-/* BADGE */
+/* BADGES */
 
 .badge{
-background:#e63946;
-color:#fff;
 padding:6px 14px;
 border-radius:20px;
 font-size:12px;
+margin-bottom:15px;
 display:inline-block;
-margin-bottom:10px;
+font-weight:600;
 }
 
-.premium{
+.basic-badge{
+background:#0d6efd;
+color:white;
+}
+
+.premium-badge{
 background:#ff6b00;
+color:white;
 }
 
 
 
-/* MOST POPULAR */
+/* POPULAR TAG */
 
 .popular{
 position:absolute;
@@ -232,7 +262,7 @@ top:-12px;
 right:15px;
 background:#ff6b00;
 color:#fff;
-padding:6px 10px;
+padding:6px 12px;
 font-size:12px;
 border-radius:8px;
 }
@@ -244,16 +274,6 @@ border-radius:8px;
 .plan-title{
 font-size:22px;
 font-weight:700;
-margin-bottom:5px;
-}
-
-
-
-/* PRICE */
-
-.price{
-font-size:34px;
-font-weight:700;
 margin-bottom:15px;
 }
 
@@ -264,11 +284,11 @@ margin-bottom:15px;
 .features{
 list-style:none;
 padding:0;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .features li{
-margin-bottom:8px;
+margin-bottom:10px;
 font-size:14px;
 }
 
@@ -277,31 +297,34 @@ font-size:14px;
 /* BUTTON */
 
 .join-btn{
-background:#25D366;
-color:#fff;
-text-align:center;
-padding:13px;
+padding:14px;
 border-radius:10px;
 text-decoration:none;
+text-align:center;
 font-weight:600;
-transition:0.3s;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+margin-top:auto;
 }
 
-.join-btn:hover{
+.whatsapp-btn{
+background:#25D366;
+color:white;
+}
+
+.whatsapp-btn:hover{
 background:#1ebe5d;
 }
 
-.prime-btn{
-background:#ff6b00;
-}
-
 .prime-btn:hover{
-background:#e45f00;
+opacity:0.9;
 }
 
 
 
-/* COMPARISON TABLE */
+/* TABLE */
 
 .comparison{
 text-align:center;
@@ -312,18 +335,23 @@ margin-bottom:20px;
 font-weight:700;
 }
 
+.table-wrapper{
+overflow-x:auto;
+}
+
 table{
 width:100%;
 border-collapse:collapse;
 background:#fff;
 box-shadow:0 8px 25px rgba(0,0,0,0.08);
 border-radius:12px;
-overflow:hidden;
+min-width:500px;
 }
 
-th, td{
+th,td{
 padding:14px;
 border-bottom:1px solid #eee;
+text-align:center;
 }
 
 th{
@@ -341,11 +369,20 @@ font-size:14px;
 
 @media(max-width:768px){
 
-.prime{
-transform:none;
+.heading h2{
+font-size:24px;
 }
 
-table{
+.plans-wrapper{
+grid-template-columns:1fr;
+gap:25px;
+}
+
+.plan-card{
+width:100%;
+}
+
+.features li{
 font-size:13px;
 }
 

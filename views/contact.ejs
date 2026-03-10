@@ -206,17 +206,23 @@ document.getElementById("paymentTimer").innerText="Expired";
 
 <div class="container mt-5 mb-5 contact-wrapper">
 
-
-<!-- PAYMENT SECTION FIRST -->
+<!-- PAYMENT / DONATION SECTION -->
 
 <div class="payment-box">
 
 <h5 class="text-primary fw-bold">
-Scan & Pay
+Support Our Mission
 </h5>
 
 <p class="payment-note">
-Please tap the QR code to reveal it and complete the payment before submitting the form.
+If you would like to support our website and help us continue empowering students 
+with real career opportunities, you may choose to donate. 
+This contribution helps us maintain and improve the platform.
+</p>
+
+<p class="payment-note">
+Please note: <b>Donation is completely optional and not mandatory.</b>
+You can still fill the form without making any payment.
 </p>
 
 <div class="qr-box">
@@ -226,10 +232,7 @@ Please tap the QR code to reveal it and complete the payment before submitting t
 <img src="/images/upi-qr.jpeg" alt="UPI QR Code">
 
 <div class="qr-overlay">
-
-Tap to reveal QR <br>
-Complete payment first
-
+Tap to reveal QR
 </div>
 
 </div>
@@ -241,13 +244,6 @@ UPI ID: 7488663980@ybl
 </p>
 
 
-<a href="upi://pay?pa=7488663980@ybl&pn=Amupro&cu=INR"
-class="btn btn-success w-100 mt-2">
-
-Pay via UPI
-
-</a>
-
 
 <div style="margin-top:15px;font-size:14px;color:#64748b">
 
@@ -257,21 +253,20 @@ Payment session expires in
 </div>
 
 <p class="payment-note mt-2">
-After completing the payment, upload the screenshot in the form below.
+If you choose to donate, please upload the payment screenshot in the form below.
 </p>
 
 </div>
 
 
 
-<!-- MESSAGE AFTER PAYMENT -->
+<!-- MESSAGE -->
 
 <div class="payment-info">
 
-After payment kindly fill this form so our team can contact you for verification.
+You may now proceed to fill out the form below so our team can contact you.
 
 </div>
-
 
 
 <!-- FORM -->
@@ -342,6 +337,8 @@ Contact Us
 <option disabled selected>Select</option>
 <option>Online Meeting</option>
 <option>Call</option>
+<option>Email</option>
+<option>NA</option>
 </select>
 
 
@@ -356,7 +353,7 @@ onchange="validateResume(this)"
 required>
 
 
-<label class="form-label">Upload Payment Screenshot*</label>
+<label class="form-label">If you donate, upload Payment Screenshot*</label>
 
 <input
 type="file"

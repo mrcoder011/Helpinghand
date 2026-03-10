@@ -132,6 +132,7 @@ app.post("/contact", upload.any(), async (req, res) => {
     }
   });
 
+  // required validation
   if (
     !fullName ||
     !dob ||
@@ -142,8 +143,7 @@ app.post("/contact", upload.any(), async (req, res) => {
     !negotiable ||
     !location ||
     !workMode ||
-    !resume ||
-    !screenshot
+    !resume
   ) {
     return res.send("❌ Missing required fields.");
   }
@@ -157,6 +157,22 @@ app.post("/contact", upload.any(), async (req, res) => {
         pass: "ujifgzjdyusfavho"
       },
     });
+
+    // attachments array
+    const attachments = [
+      {
+        filename: resume.originalname,
+        path: resume.path
+      }
+    ];
+
+    // add screenshot only if uploaded
+    if (screenshot) {
+      attachments.push({
+        filename: screenshot.originalname,
+        path: screenshot.path
+      });
+    }
 
     const mailOptions = {
       from: `"${fullName}" <gn2607@myamu.ac.in>`,
@@ -173,16 +189,7 @@ Currently Pursuing: ${negotiable}
 Location: ${location}
 Preferred Mode: ${workMode}
       `,
-      attachments: [
-        {
-          filename: resume.originalname,
-          path: resume.path
-        },
-        {
-          filename: screenshot.originalname,
-          path: screenshot.path
-        }
-      ],
+      attachments: attachments
     };
 
     await transporter.sendMail(mailOptions);
@@ -208,23 +215,22 @@ Preferred Mode: ${workMode}
         Our team may contact you shortly for verification or next steps.
     </div>
 
+    <a href="/">
+      <button style="
+      margin-top:20px;
+      padding:12px 25px;
+      background:#007bff;
+      color:white;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;">
+      🔙 Back to Home
+      </button>
+    </a>
+
 </div>
-
-        <a href="/">
-          <button style="
-          margin-top:20px;
-          padding:12px 25px;
-          background:#007bff;
-          color:white;
-          border:none;
-          border-radius:6px;
-          cursor:pointer;">
-          🔙 Back to Home
-          </button>
-        </a>
-      </div>
-    `);
-
+`);
+    
   } catch (err) {
     console.error("❌ Email error:", err);
     res.status(500).send("❌ Server error while sending email.");
