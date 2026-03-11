@@ -19,6 +19,7 @@ background:#ffffff;
 padding:40px;
 border-radius:14px;
 box-shadow:0 12px 35px rgba(0,0,0,0.08);
+margin-bottom:30px;
 }
 
 /* PAYMENT CARD */
@@ -29,7 +30,6 @@ padding:35px 25px;
 border-radius:14px;
 box-shadow:0 12px 35px rgba(0,0,0,0.08);
 text-align:center;
-margin-bottom:25px;
 }
 
 .qr-box{
@@ -101,17 +101,7 @@ border-radius:8px;
 box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* instruction message */
-
-.payment-info{
-background:#e8f5ff;
-padding:18px;
-border-radius:10px;
-margin-bottom:25px;
-text-align:center;
-color:#1e3a8a;
-font-weight:500;
-}
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -134,12 +124,9 @@ width:170px;
 /* QR REVEAL */
 
 function revealQR(){
-
 const qr=document.getElementById("qrWrapper");
 qr.classList.add("active");
-
 }
-
 
 /* Screenshot preview */
 
@@ -149,14 +136,11 @@ const preview=document.getElementById("screenshotPreview");
 const file=event.target.files[0];
 
 if(file){
-
 preview.src=URL.createObjectURL(file);
 preview.style.display="block";
-
 }
 
 }
-
 
 /* Resume validation */
 
@@ -165,20 +149,15 @@ function validateResume(input){
 const file=input.files[0];
 
 if(file){
-
 if(file.type!=="application/pdf"){
-
 alert("Please upload resume in PDF format only");
 input.value="";
-
+}
 }
 
 }
 
-}
-
-
-/* Payment countdown timer */
+/* Payment timer */
 
 let time=600;
 
@@ -193,9 +172,7 @@ minutes+":"+(seconds<10?"0":"")+seconds;
 time--;
 
 if(time<0){
-
 document.getElementById("paymentTimer").innerText="Expired";
-
 }
 
 },1000);
@@ -206,70 +183,8 @@ document.getElementById("paymentTimer").innerText="Expired";
 
 <div class="container mt-5 mb-5 contact-wrapper">
 
-<!-- PAYMENT / DONATION SECTION -->
 
-<div class="payment-box">
-
-<h5 class="text-primary fw-bold">
-Support Our Mission
-</h5>
-
-<p class="payment-note">
-If you would like to support our website and help us continue empowering students 
-with real career opportunities, you may choose to donate. 
-This contribution helps us maintain and improve the platform.
-</p>
-
-<p class="payment-note">
-Please note: <b>Donation is completely optional and not mandatory.</b>
-You can still fill the form without making any payment.
-</p>
-
-<div class="qr-box">
-
-<div id="qrWrapper" class="qr-wrapper" onclick="revealQR()">
-
-<img src="/images/upi-qr.jpeg" alt="UPI QR Code">
-
-<div class="qr-overlay">
-Tap to reveal QR
-</div>
-
-</div>
-
-</div>
-
-<p class="mt-2 fw-semibold">
-UPI ID: 7488663980@ybl
-</p>
-
-
-
-<div style="margin-top:15px;font-size:14px;color:#64748b">
-
-Payment session expires in  
-<b id="paymentTimer">10:00</b>
-
-</div>
-
-<p class="payment-note mt-2">
-If you choose to donate, please upload the payment screenshot in the form below.
-</p>
-
-</div>
-
-
-
-<!-- MESSAGE -->
-
-<div class="payment-info">
-
-You may now proceed to fill out the form below so our team can contact you.
-
-</div>
-
-
-<!-- FORM -->
+<!-- FORM FIRST -->
 
 <div class="form-card">
 
@@ -353,7 +268,9 @@ onchange="validateResume(this)"
 required>
 
 
-<label class="form-label">If you donated, upload Payment Screenshot (Optional)</label>
+<label class="form-label">
+If you donated, upload Payment Screenshot (Optional)
+</label>
 
 <input
 type="file"
@@ -370,6 +287,52 @@ Submit Application
 </button>
 
 </form>
+
+</div>
+
+
+
+<!-- OPTIONAL DONATION SECTION -->
+
+<div class="payment-box">
+
+<h5 class="text-primary fw-bold">
+Support Our Mission
+</h5>
+
+<p class="payment-note">
+If you would like to support our website and help us continue empowering students 
+with real career opportunities, you may choose to donate.
+</p>
+
+<p class="payment-note">
+<b>Donation is completely optional.</b>
+</p>
+
+<div class="qr-box">
+
+<div id="qrWrapper" class="qr-wrapper" onclick="revealQR()">
+
+<img src="/images/upi-qr.jpeg" alt="UPI QR Code">
+
+<div class="qr-overlay">
+Tap to reveal QR
+</div>
+
+</div>
+
+</div>
+
+<p class="mt-2 fw-semibold">
+UPI ID: 7488663980@ybl
+</p>
+
+<div style="margin-top:15px;font-size:14px;color:#64748b">
+
+Payment session expires in  
+<b id="paymentTimer">10:00</b>
+
+</div>
 
 </div>
 
