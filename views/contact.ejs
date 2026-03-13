@@ -190,15 +190,29 @@ document.getElementById("paymentTimer").innerText="Expired";
 
 <form action="/contact" method="POST" enctype="multipart/form-data">
 
-<h3 class="mb-4 text-center fw-bold text-primary">
+<!-- HEADING -->
+
+<div class="text-center mb-4">
+
+<h3 class="fw-bold text-primary">
 Connect With Us
 </h3>
+
+<p class="text-muted small">
+Please fill in the details below to connect with our team.  
+We will review your information and contact you soon.
+</p>
+
+</div>
+
+
+<!-- NAME + DOB -->
 
 <div class="row">
 
 <div class="col-md-6">
 <label class="form-label">Full Name*</label>
-<input type="text" class="form-control mb-3" name="fullName" required>
+<input type="text" class="form-control mb-3" name="fullName" placeholder="Enter your full name" required>
 </div>
 
 <div class="col-md-6">
@@ -209,52 +223,72 @@ Connect With Us
 </div>
 
 
+<!-- MOBILE -->
+
 <label class="form-label">Mobile Number*</label>
-<input type="tel" class="form-control mb-3" name="mobile" required>
+<input type="tel" class="form-control mb-3" name="mobile" placeholder="Enter your mobile number" required>
 
 
-<label class="form-label">Contact us for (Reason)*</label>
-<textarea class="form-control mb-3" name="skills" rows="3" required></textarea>
+<!-- REASON -->
 
+<label class="form-label">Reason for Contact*</label>
+
+<textarea 
+class="form-control mb-3"
+name="reason"
+rows="3"
+placeholder="Tell us why you want to connect with us"
+required></textarea>
+
+
+<!-- COURSE + DESIGNATION -->
 
 <div class="row">
 
 <div class="col-md-6">
 <label class="form-label">Course / Branch*</label>
-<input type="text" class="form-control mb-3" name="company" required>
+<input type="text" class="form-control mb-3" name="course" placeholder="Example: B.Tech Mechanical" required>
 </div>
 
 <div class="col-md-6">
 <label class="form-label">Current Designation*</label>
-<input type="text" class="form-control mb-3" name="designation" required>
+<input type="text" class="form-control mb-3" name="designation" placeholder="Student / Graduate / Working Professional" required>
 </div>
 
 </div>
 
 
-<label class="form-label">Are you currently pursuing?*</label>
+<!-- PURSUING -->
 
-<select class="form-select mb-3" name="negotiable" required>
+<label class="form-label">Are you currently pursuing your course?*</label>
+
+<select class="form-select mb-3" name="pursuing" required>
 <option disabled selected>Select</option>
 <option>Yes</option>
 <option>No</option>
 </select>
 
 
+<!-- LOCATION -->
+
 <label class="form-label">Current Location*</label>
-<input type="text" class="form-control mb-3" name="location" required>
+<input type="text" class="form-control mb-3" name="location" placeholder="City, State" required>
 
 
-<label class="form-label">Preferred Mode for Contact*</label>
+<!-- CONTACT MODE -->
 
-<select class="form-select mb-3" name="workMode" required>
+<label class="form-label">Preferred Mode of Contact*</label>
+
+<select class="form-select mb-3" name="contactMode" required>
 <option disabled selected>Select</option>
 <option>Online Meeting</option>
-<option>Call</option>
+<option>Phone Call</option>
 <option>Email</option>
-<option>NA</option>
+<option>Not Applicable</option>
 </select>
 
+
+<!-- RESUME -->
 
 <label class="form-label">Upload Resume*</label>
 
@@ -267,6 +301,8 @@ onchange="validateResume(this)"
 required>
 
 
+<!-- PAYMENT SCREENSHOT -->
+
 <label class="form-label">
 If you donated, upload Payment Screenshot (Optional)
 </label>
@@ -278,17 +314,18 @@ name="paymentScreenshot"
 accept="image/*"
 onchange="previewScreenshot(event)">
 
-<img id="screenshotPreview">
+<img id="screenshotPreview" style="max-width:200px;margin-top:10px;">
 
+
+<!-- SUBMIT -->
 
 <button type="submit" class="btn btn-primary w-100 submit-btn">
-Submit Application
+Submit Details
 </button>
 
 </form>
 
 </div>
-
 
 
 <!-- OPTIONAL DONATION SECTION -->
